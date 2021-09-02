@@ -1,0 +1,108 @@
+<resources>
+    <!-- Base application theme. -->
+
+
+    <style name="Widget.App.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"/>
+    <style name="Widget.App.TextInputLayout.EditText">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.MaterialComponents.SmallComponent</item>
+        <item name="hintTextColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="ThemeOverlay.App.TextInputLayout" parent="">
+        <item name="colorPrimary">@color/light_grey_color</item>
+        <item name="colorOnSurface">@color/primaryColorDark</item>
+
+        <item name="colorError">@color/colorDangerDark</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.MaterialComponents.Subtitle1</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.MaterialComponents.Caption</item>
+        <item name="editTextStyle">@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox.Dense</item>
+    </style>
+
+<!--    Button -->
+
+    <style name="TextAppearance.App.LargeRoundButton" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="ShapeAppearance.App.LargeRoundButton" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">6dp</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Button.Primary" parent="">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorOnPrimary">@color/primaryTextColor</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Button.Secondary" parent="">
+        <item name="colorPrimary">@color/secondaryColor</item>
+        <item name="colorOnPrimary">@color/secondaryTextColor</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Button.Success" parent="">
+        <item name="colorPrimary">@color/colorSuccess</item>
+        <item name="colorOnPrimary">@color/secondaryTextColor</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Button.Danger" parent="">
+        <item name="colorPrimary">@color/colorDanger</item>
+        <item name="colorOnPrimary">@color/secondaryTextColor</item>
+    </style>
+
+    <style name="LargeRoundButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.Secondary</item>
+        <item name="android:textAppearance">@style/TextAppearance.App.LargeRoundButton</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.App.LargeRoundButton</item>
+        <item name="android:minWidth">64dp</item>
+        <item name="android:minHeight">64dp</item>
+    </style>
+
+    <style name="LargeRoundButton.Primary">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.Primary</item>
+    </style>
+
+    <style name="LargeRoundButton.Secondary">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.Secondary</item>
+    </style>
+
+    <style name="LargeRoundButton.Success">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.Success</item>
+    </style>
+
+    <style name="LargeRoundButton.Danger">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.Danger</item>
+    </style>
+
+    <style name="IconButton" parent="Widget.MaterialComponents.Button.TextButton">
+<!--        <item name="backgroundTint">@color/selector_icon_btn</item>-->
+        <item name="iconPadding">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+    <style name="IconButton.Danger">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Danger</item>
+    </style>
+    <style name="ThemeOverlay.Danger" parent="">
+        <item name="colorPrimary">@color/colorDanger</item>
+        <item name="colorOnPrimary">@color/textColorPrimary</item>
+    </style>
+
+    <style name="IconButton.Success">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Success</item>
+    </style>
+    <style name="ThemeOverlay.Success" parent="">
+        <item name="colorPrimary">@color/colorSuccess</item>
+        <item name="colorOnPrimary">@color/textColorPrimary</item>
+    </style>
+
+</resources>

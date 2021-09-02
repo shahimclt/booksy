@@ -3,4 +3,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+<!--    Login Page   -->
+    <string name="login_prompt">login to get started</string>
 </resources>

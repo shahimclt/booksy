@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primaryColorLighter">#CCA7DA</color>
-    <color name="primaryColorLight">#A672BA</color>
-    <color name="primaryColor">#864a9d</color>
-    <color name="primaryColorDark">#6D2F86</color>
-    <color name="primaryColorDarker">#571A6F</color>
+    <color name="primaryColorLighter">#9887b5</color>
+    <color name="primaryColorLight">#715a96</color>
+    <color name="primaryColor">#51377a</color>
+    <color name="primaryColorDark">#381f61</color>
+    <color name="primaryColorDarker">#200b43</color>
 
-    <color name="secondaryColorLighter">#FE9D9F</color>
-    <color name="secondaryColorLight">#FD7276</color>
-    <color name="secondaryColor">#F04C4F</color>
-    <color name="secondaryColorDark">#DF2328</color>
-    <color name="secondaryColorDarker">#AE1014</color>
+    <color name="secondaryColorLighter">#ffcf95</color>
+    <color name="secondaryColorLight">#ffbb6a</color>
+    <color name="secondaryColor">#FEAB47</color>
+    <color name="secondaryColorDark">#ef8e1a</color>
+    <color name="secondaryColorDarker">#ba690a</color>
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
@@ -58,12 +58,6 @@
     <color name="colorSecondarySurface">#f0f0f0</color>
     <color name="colorSecondarySurfaceDivider">#22000000</color>
     <color name="textColorCard">#EFE7E7</color>
-
-    <color name="colorSecondary">#ff8450</color>
-    <color name="colorSecondaryLight">#ffa57f</color>
-    <color name="colorSecondaryLighter">#ffd3c0</color>
-    <color name="colorSecondaryDark">#ee5a1b</color>
-    <color name="colorSecondaryDarker">#9e3407</color>
 
     <!--    Specific Colors   -->
     <color name="colorChipBackground">#4400bfa5</color>

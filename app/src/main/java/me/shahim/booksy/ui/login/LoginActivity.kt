@@ -6,10 +6,13 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
 import me.shahim.booksy.MainActivity
 import me.shahim.booksy.R
+import me.shahim.booksy.databinding.ActivityLoginBinding
+import me.shahim.booksy.databinding.ActivityMainBinding
 import me.shahim.booksy.ui.account.AccountViewModel
 
 
@@ -19,13 +22,19 @@ class LoginActivity : AppCompatActivity() {
         const val RC_AUTH = 100
     }
 
-    private val viewModel: AccountViewModel by viewModels()
+    private lateinit var binding: ActivityLoginBinding
+
+    private lateinit var mainViewModel: AccountViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        mainViewModel = ViewModelProvider(this).get(AccountViewModel::class.java)
         init()
-        createSignInIntent()
+//        createSignInIntent()
     }
 
     private fun init() {
