@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="me.shahim.booksy.ui.dashboard.DashboardFragment"
+        android:name="me.shahim.booksy.ui.bookshelf.BookshelfFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="me.shahim.booksy.ui.notifications.NotificationsFragment"
+        android:name="me.shahim.booksy.ui.account.AccountFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
 </navigation>

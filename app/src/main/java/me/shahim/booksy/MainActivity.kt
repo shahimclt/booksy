@@ -11,7 +11,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import me.shahim.booksy.databinding.ActivityMainBinding
 import me.shahim.booksy.ui.account.AccountViewModel
-import me.shahim.booksy.ui.account.LoginActivity
+import me.shahim.booksy.ui.login.LoginActivity
 
 class MainActivity : AppCompatActivity() {
 

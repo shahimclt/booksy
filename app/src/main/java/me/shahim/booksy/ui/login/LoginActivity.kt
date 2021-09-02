@@ -1,4 +1,4 @@
-package me.shahim.booksy.ui.account
+package me.shahim.booksy.ui.login
 
 import android.app.Activity
 import android.content.Intent
@@ -10,6 +10,7 @@ import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
 import me.shahim.booksy.MainActivity
 import me.shahim.booksy.R
+import me.shahim.booksy.ui.account.AccountViewModel
 
 
 class LoginActivity : AppCompatActivity() {
@@ -44,7 +45,8 @@ class LoginActivity : AppCompatActivity() {
                         .setAvailableProviders(providers)
                         .setIsSmartLockEnabled(false)
                         .build(),
-                RC_AUTH)
+                RC_AUTH
+        )
         // [END auth_fui_create_intent]
     }
     // [START auth_fui_result]
