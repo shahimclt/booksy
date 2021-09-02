@@ -1,9 +1,10 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs'
-    id 'kotlin-android-extensions'
 }
 
 android {
@@ -47,6 +48,13 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+
+    //firebase
+    implementation 'com.firebaseui:firebase-ui-auth:6.4.0'
+    implementation platform('com.google.firebase:firebase-bom:26.3.0')
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-analytics'
 
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
 
