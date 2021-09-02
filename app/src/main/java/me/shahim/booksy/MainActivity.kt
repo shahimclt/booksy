@@ -2,15 +2,16 @@ package me.shahim.booksy
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import me.shahim.booksy.databinding.ActivityMainBinding
+import me.shahim.booksy.ui.account.AccountViewModel
+import me.shahim.booksy.ui.account.LoginActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -47,12 +48,12 @@ class MainActivity : AppCompatActivity() {
                 navView.setupWithNavController(navController)
                 navController.addOnDestinationChangedListener { controller, destination, arguments ->
                     when (destination.id) {
-                        R.id.trainingListFragment,R.id.beaconListFragment, R.id.bayListFragment, R.id.settingsFragment -> {
-                            nav_view.visibility = View.VISIBLE
-                        }
-                        else -> {
-                            nav_view.visibility = View.GONE
-                        }
+//                        R.id.trainingListFragment,R.id.beaconListFragment, R.id.bayListFragment, R.id.settingsFragment -> {
+//                            nav_view.visibility = View.VISIBLE
+//                        }
+//                        else -> {
+//                            nav_view.visibility = View.GONE
+//                        }
                     }
                 }
             }
