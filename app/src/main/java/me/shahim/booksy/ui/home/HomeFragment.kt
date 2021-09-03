@@ -4,13 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.appcompat.widget.AppCompatTextView
-import androidx.databinding.BindingAdapter
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.chad.library.adapter.base.animation.SlideInBottomAnimation
 import me.shahim.booksy.R
+import me.shahim.booksy.data.model.Book
 import me.shahim.booksy.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -21,6 +21,8 @@ class HomeFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+    private lateinit var mAdapter: BookListQuickAdapter
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -33,8 +35,13 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         _binding?.viewModel = homeViewModel
         val root: View = binding.root
+        init()
         observe()
         return root
+    }
+
+    private fun init() {
+        initAdapter()
     }
 
     private fun observe() {
@@ -45,6 +52,40 @@ class HomeFragment : Fragment() {
                 else -> getString(R.string.home_greeting_evening)
             }
         })
+
+        homeViewModel.allBooks.observe(viewLifecycleOwner) {
+            mAdapter.setDiffNewData(it.toMutableList())
+        }
+    }
+
+    private fun initAdapter() {
+        binding.recyclerView.apply {
+            val manager = LinearLayoutManager(context)
+            manager.orientation = LinearLayoutManager.VERTICAL
+            layoutManager = manager
+
+            setHasFixedSize(true)
+            isNestedScrollingEnabled = true
+            mAdapter = BookListQuickAdapter(mutableListOf())
+            adapter = mAdapter
+        }
+
+        mAdapter.apply {
+            animationEnable = false
+            adapterAnimation = SlideInBottomAnimation()
+            isAnimationFirstOnly = true
+
+            setDiffCallback(BookListQuickAdapter.DiffCallback())
+
+            setOnItemClickListener { adapter, view, position ->
+                val book = adapter.getItem(position) as Book
+//                val action =
+//                    TrainingListFragmentDirections.actionTrainingListFragmentToTrainingDetailFragment(
+//                        session.sessionId
+//                    )
+//                findNavController().navigate(action)
+            }
+        }
     }
 
     override fun onDestroyView() {

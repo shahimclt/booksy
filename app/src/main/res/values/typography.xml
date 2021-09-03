@@ -31,8 +31,8 @@
         <item name="android:textSize">24sp</item>
     </style>
     <style name="TextAppearance.Booksy.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
-        <item name="fontFamily">@font/montserrat_bold</item>
-        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:fontFamily">@font/montserrat</item>
         <item name="android:textColor">@color/textColorPrimary</item>
         <item name="android:textSize">20sp</item>
     </style>

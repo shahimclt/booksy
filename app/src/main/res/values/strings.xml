@@ -12,4 +12,7 @@
     <string name="home_greeting_morning">Good Morning</string>
     <string name="home_greeting_noon">Good Afternoon</string>
     <string name="home_greeting_evening">Good Evening</string>
+
+
+    <string name="book_list_extra_detail">%d pages, %s</string>
 </resources>

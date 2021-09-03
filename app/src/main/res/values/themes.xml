@@ -13,12 +13,12 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <!-- Customize your theme here. -->
-        <item name="toolbarStyle">@style/Widget.Booksy.Toolbar</item>
+<!--        <item name="toolbarStyle">@style/Widget.Booksy.Toolbar</item>-->
     </style>
 
-    <style name="Widget.Booksy.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+    <style name="Widget.Booksy.Toolbar" parent="Widget.MaterialComponents.Toolbar.PrimarySurface">
         <item name="titleTextAppearance">@style/TextAppearance.Booksy.ToolbarTitle</item>
-        <item name="materialThemeOverlay">@style/ThemeOverlay.Booksy.Toolbar</item>
+<!--        <item name="materialThemeOverlay">@style/ThemeOverlay.Booksy.Toolbar</item>-->
     </style>
 
     <style name="TextAppearance.Booksy.ToolbarTitle" parent="TextAppearance.Booksy.Headline6">
@@ -31,8 +31,8 @@
     </style>
 
     <style name="ThemeOverlay.Booksy.Toolbar" parent="">
-        <item name="colorPrimary">@color/colorSurface</item>
-        <item name="colorPrimaryVariant">@color/colorSecondarySurface</item>
-        <item name="colorOnPrimary">@color/colorOnSurface</item>
+<!--        <item name="colorPrimary">@color/colorSurface</item>-->
+<!--        <item name="colorPrimaryVariant">@color/colorSecondarySurface</item>-->
+<!--        <item name="colorOnPrimary">@color/colorOnSurface</item>-->
     </style>
 </resources>

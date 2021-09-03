@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="book"
+            type="me.shahim.booksy.data.model.Book" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_margin"
+        >
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/book_cover"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:adjustViewBounds="true"
+            android:elevation="4dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/ShapeAppearance.App.RoundedImageView"
+            app:srcCompat="@drawable/im_book_cover_placeholder" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/bookName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_margin"
+            android:layout_marginEnd="@dimen/element_spacing"
+            android:textAppearance="@style/TextAppearance.Booksy.Headline6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/book_cover"
+            app:layout_constraintTop_toTopOf="@+id/book_cover"
+            android:text="@{book.title}"
+            tools:text="Harry Potter and the Chamber of Secrets" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/authorName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_medium"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Booksy.Subtitle1"
+            app:layout_constraintEnd_toEndOf="@id/bookName"
+            app:layout_constraintStart_toStartOf="@id/bookName"
+            app:layout_constraintTop_toBottomOf="@+id/bookName"
+            android:text="@{book.author}"
+            tools:text="J K Rowling" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/extraDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/line_spacing"
+            android:textAppearance="@style/TextAppearance.Booksy.Subtitle2"
+            app:layout_constraintEnd_toEndOf="@id/authorName"
+            app:layout_constraintStart_toStartOf="@id/authorName"
+            app:layout_constraintTop_toBottomOf="@+id/authorName"
+            tools:text="960 pages, 2015" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
