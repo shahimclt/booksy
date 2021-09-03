@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import me.shahim.booksy.databinding.FragmentLoginBinding
 
 class LoginWelcomeFragment : Fragment() {
@@ -23,7 +24,16 @@ class LoginWelcomeFragment : Fragment() {
 
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
+        init()
         return root
+    }
+
+    private fun init() {
+        binding.loginBtn.setOnClickListener {
+            val action = LoginWelcomeFragmentDirections.actionLoginWelcomeFragmentToLoginLoadingFragment()
+            findNavController().navigate(action)
+        }
     }
 
     override fun onDestroyView() {

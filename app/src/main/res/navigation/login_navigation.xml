@@ -10,12 +10,12 @@
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_bookshelfFragment_to_loginWelcomeFragment"
+            android:id="@+id/action_loginWelcomeFragment_to_loginLoadingFragment"
             app:destination="@id/loginLoadingFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginLoadingFragment"
-        android:name="me.shahim.booksy.ui.login.LoginWelcomeFragment"
+        android:name="me.shahim.booksy.ui.login.LoginLoadingFragment"
         android:label="fragment_login_loading"
         tools:layout="@layout/fragment_login_loading" />
 </navigation>
