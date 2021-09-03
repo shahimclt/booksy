@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Booksy</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">Browse</string>
+    <string name="title_bookshelf">Bookshelf</string>
+    <string name="title_account">Account</string>
 
 <!--    Login Page   -->
     <string name="login_prompt">login to get started</string>
