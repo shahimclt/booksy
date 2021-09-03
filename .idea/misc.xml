@@ -13,12 +13,17 @@
         <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/drawable/ic_launcher_background.xml" value="0.34427083333333336" />
         <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.34427083333333336" />
         <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.34427083333333336" />
+        <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/drawable/im_book_cover_placeholder.xml" value="0.3060185185185185" />
         <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/drawable/im_hero_bookworm.xml" value="0.9" />
         <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/font/poppins_medium.xml" value="0.225" />
+        <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/font/roboto.xml" value="0.23796296296296296" />
+        <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/font/roboto_mono_bold.xml" value="0.23796296296296296" />
         <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/layout/activity_login.xml" value="0.2037037037037037" />
         <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/layout/activity_main.xml" value="0.2942708333333333" />
+        <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/layout/fragment_login.xml" value="0.328125" />
         <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/layout/fragment_login_loading.xml" value="0.328125" />
+        <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/layout/list_books_item.xml" value="0.29444444444444445" />
         <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/menu/bottom_nav_menu.xml" value="0.26157407407407407" />
       </map>
     </option>

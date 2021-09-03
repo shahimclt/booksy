@@ -22,8 +22,8 @@
 <!--    Button -->
 
     <style name="TextAppearance.App.LargeRoundButton" parent="TextAppearance.MaterialComponents.Button">
-        <item name="fontFamily">@font/poppins_medium</item>
-        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
         <item name="android:textSize">18sp</item>
     </style>
 
@@ -103,6 +103,12 @@
     <style name="ThemeOverlay.Success" parent="">
         <item name="colorPrimary">@color/colorSuccess</item>
         <item name="colorOnPrimary">@color/textColorPrimary</item>
+    </style>
+
+<!--    Rounded ImageView   -->
+    <style name="ShapeAppearance.App.RoundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">6dp</item>
     </style>
 
 </resources>

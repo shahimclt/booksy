@@ -1,9 +1,12 @@
 <resources>
-    <string name="app_name">Booksy</string>
+    <string name="app_name">BOOKSY</string>
     <string name="title_home">Browse</string>
     <string name="title_bookshelf">Bookshelf</string>
     <string name="title_account">Account</string>
 
 <!--    Login Page   -->
     <string name="login_prompt">login to get started</string>
+
+<!--    Home page   -->
+    <string name="home_all_books">All Books</string>
 </resources>
