@@ -1,12 +1,11 @@
 package me.shahim.booksy.data.repository
 
-import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
-class AccountRepository (c: Application) {
-    private var mContext: Application = c
+class AccountRepository () {
     val loggedIn: LiveData<Boolean> = _loggedIn
     init {
 
@@ -17,6 +16,10 @@ class AccountRepository (c: Application) {
 
     fun getUserID(): String {
         return FirebaseAuth.getInstance().currentUser!!.uid
+    }
+
+    fun getUser(): FirebaseUser? {
+        return FirebaseAuth.getInstance().currentUser
     }
 
     fun refreshLoginStatus() {

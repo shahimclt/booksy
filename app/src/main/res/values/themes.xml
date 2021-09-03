@@ -10,33 +10,29 @@
         <item name="colorSecondaryVariant">@color/colorSecondaryDark</item>
         <item name="colorOnSecondary">@color/secondaryTextColor</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <!-- Customize your theme here. -->
+<!--        <item name="toolbarStyle">@style/Widget.Booksy.Toolbar</item>-->
     </style>
-    <style name="Widget.App.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+
+    <style name="Widget.Booksy.Toolbar" parent="Widget.MaterialComponents.Toolbar.PrimarySurface">
         <item name="titleTextAppearance">@style/TextAppearance.Booksy.ToolbarTitle</item>
+<!--        <item name="materialThemeOverlay">@style/ThemeOverlay.Booksy.Toolbar</item>-->
     </style>
 
     <style name="TextAppearance.Booksy.ToolbarTitle" parent="TextAppearance.Booksy.Headline6">
-        <item name="fontFamily">@font/poppins_medium</item>
-        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="fontFamily">@font/roboto_mono_bold</item>
+        <item name="android:fontFamily">@font/roboto_mono_bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:layout_gravity">center</item>
     </style>
 
-    <style name="Widget.App.Toolbar.Light">
-        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Toolbar.Light</item>
-    </style>
-    <style name="ThemeOverlay.App.Toolbar.Light" parent="">
-        <item name="colorPrimary">@color/colorSurface</item>
-        <item name="colorPrimaryVariant">@color/colorSecondarySurface</item>
-        <item name="colorOnPrimary">@color/textColorPrimary</item>
-    </style>
-
-    <style name="Widget.App.Toolbar.Transparent">
-        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Toolbar.Transparent</item>
-    </style>
-    <style name="ThemeOverlay.App.Toolbar.Transparent" parent="">
-        <item name="colorPrimary">@android:color/transparent</item>
-        <item name="colorPrimaryVariant">@android:color/transparent</item>
-        <item name="colorOnPrimary">@color/textColorPrimary</item>
+    <style name="ThemeOverlay.Booksy.Toolbar" parent="">
+<!--        <item name="colorPrimary">@color/colorSurface</item>-->
+<!--        <item name="colorPrimaryVariant">@color/colorSecondarySurface</item>-->
+<!--        <item name="colorOnPrimary">@color/colorOnSurface</item>-->
     </style>
 </resources>

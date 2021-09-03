@@ -1,50 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="TextAppearance.Booksy.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
-        <item name="fontFamily">@font/poppins_light</item>
-        <item name="android:fontFamily">@font/poppins_light</item>
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:fontFamily">@font/montserrat</item>
         <item name="android:textColor">@color/textColorPrimary</item>
-        <item name="android:textSize">42sp</item>
+        <item name="android:textSize">97sp</item>
+    </style>
+    <style name="TextAppearance.Booksy.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textSize">61sp</item>
+    </style>
+    <style name="TextAppearance.Booksy.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textSize">48sp</item>
     </style>
     <style name="TextAppearance.Booksy.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
-        <item name="fontFamily">@font/poppins_semibold</item>
-        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:fontFamily">@font/montserrat</item>
         <item name="android:textColor">@color/textColorPrimary</item>
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">34sp</item>
     </style>
     <style name="TextAppearance.Booksy.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
-        <item name="fontFamily">@font/poppins_light</item>
-        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+    <style name="TextAppearance.Booksy.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:fontFamily">@font/montserrat</item>
         <item name="android:textColor">@color/textColorPrimary</item>
         <item name="android:textSize">20sp</item>
     </style>
-    <style name="TextAppearance.Booksy.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
-        <item name="fontFamily">@font/poppins</item>
-        <item name="android:fontFamily">@font/poppins</item>
+    <style name="TextAppearance.Booksy.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:fontFamily">@font/montserrat</item>
         <item name="android:textColor">@color/textColorPrimary</item>
         <item name="android:textSize">16sp</item>
     </style>
-    <style name="TextAppearance.Booksy.Body" parent="TextAppearance.MaterialComponents.Body1">
-        <item name="fontFamily">@font/poppins</item>
-        <item name="android:fontFamily">@font/poppins</item>
-        <item name="android:textColor">@color/textColorPrimary</item>
+    <style name="TextAppearance.Booksy.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textColor">@color/textColorSecondary</item>
         <item name="android:textSize">14sp</item>
     </style>
-    <style name="TextAppearance.Booksy.BodySecondary" parent="TextAppearance.MaterialComponents.Body2">
-        <item name="fontFamily">@font/poppins</item>
-        <item name="android:fontFamily">@font/poppins</item>
+    <style name="TextAppearance.Booksy.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="TextAppearance.Booksy.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textColor">@color/textColorSecondary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextAppearance.Booksy.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="TextAppearance.Booksy.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:fontFamily">@font/roboto</item>
         <item name="android:textColor">@color/textColorSecondary</item>
         <item name="android:textSize">12sp</item>
     </style>
 
-
-    <style name="TextAppearance.Booksy.statusText" parent="TextAppearance.Booksy.BodySecondary">
-        <item name="fontFamily">@font/poppins_semibold</item>
-        <item name="android:fontFamily">@font/poppins_semibold</item>
-        <item name="android:textAllCaps">true</item>
-    </style>
-
-    <style name="TextAppearance.Booksy.MiniChip" parent="TextAppearance.Booksy.BodySecondary">
+    <style name="TextAppearance.Booksy.Overline" parent="TextAppearance.MaterialComponents.Overline">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textColor">@color/textColorSecondary</item>
         <item name="android:textSize">10sp</item>
     </style>
 </resources>
