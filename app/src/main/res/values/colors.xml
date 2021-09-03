@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primaryColorLighter">#9887b5</color>
-    <color name="primaryColorLight">#715a96</color>
-    <color name="primaryColor">#51377a</color>
-    <color name="primaryColorDark">#381f61</color>
-    <color name="primaryColorDarker">#200b43</color>
+    <color name="colorPrimaryLighter">#9887b5</color>
+    <color name="colorPrimaryLight">#715a96</color>
+    <color name="colorPrimary">#51377a</color>
+    <color name="colorPrimaryDark">#381f61</color>
+    <color name="colorPrimaryDarker">#200b43</color>
 
-    <color name="secondaryColorLighter">#ffcf95</color>
-    <color name="secondaryColorLight">#ffbb6a</color>
-    <color name="secondaryColor">#FEAB47</color>
-    <color name="secondaryColorDark">#ef8e1a</color>
-    <color name="secondaryColorDarker">#ba690a</color>
+    <color name="colorSecondaryLighter">#ffcf95</color>
+    <color name="colorSecondaryLight">#ffbb6a</color>
+    <color name="colorSecondary">#FEAB47</color>
+    <color name="colorSecondaryDark">#ef8e1a</color>
+    <color name="colorSecondaryDarker">#ba690a</color>
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>

@@ -11,7 +11,7 @@
 
     <style name="ThemeOverlay.App.TextInputLayout" parent="">
         <item name="colorPrimary">@color/light_grey_color</item>
-        <item name="colorOnSurface">@color/primaryColorDark</item>
+        <item name="colorOnSurface">@color/colorPrimaryDark</item>
 
         <item name="colorError">@color/colorDangerDark</item>
         <item name="textAppearanceSubtitle1">@style/TextAppearance.MaterialComponents.Subtitle1</item>
@@ -33,12 +33,12 @@
     </style>
 
     <style name="ThemeOverlay.App.Button.Primary" parent="">
-        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorOnPrimary">@color/primaryTextColor</item>
     </style>
 
     <style name="ThemeOverlay.App.Button.Secondary" parent="">
-        <item name="colorPrimary">@color/secondaryColor</item>
+        <item name="colorPrimary">@color/colorSecondary</item>
         <item name="colorOnPrimary">@color/secondaryTextColor</item>
     </style>
 
