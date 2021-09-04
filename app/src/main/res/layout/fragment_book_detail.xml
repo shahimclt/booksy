@@ -232,8 +232,9 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="@style/TextAppearance.Booksy.Subtitle2"
                         android:layout_marginTop="@dimen/activity_margin"
+                        android:lineSpacingExtra="7sp"
                         android:text="@{viewModel.book.desc}"
-                        tools:text="Lorem Ipsum" />
+                        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum massa eros, elementum vel varius non, pulvinar et ante. Ut vehicula, mauris id feugiat viverra, neque felis aliquam diam, congue ullamcorper erat nisl eget mi. Morbi efficitur erat et diam congue pellentesque. Praesent ac tempus tellus. Ut imperdiet ex eros, sit amet aliquam urna finibus eget. In malesuada ultricies urna. Suspendisse aliquam, tortor vel accumsan euismod, mauris tortor commodo nunc, ac egestas libero enim vitae sem. Proin nec ultricies nisi. Donec sed vulputate diam. Aenean vestibulum velit et mi faucibus, at eleifend nisi aliquam. Integer aliquam vestibulum fermentum. Proin bibendum, sapien." />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
@@ -247,6 +248,7 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="@style/TextAppearance.Booksy.Subtitle2"
                         android:layout_marginTop="@dimen/activity_margin"
+                        android:lineSpacingExtra="7sp"
                         android:text="@{viewModel.book.genreString}"
                         tools:text="Published By Penguin Classics" />
 
@@ -262,6 +264,7 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="@style/TextAppearance.Booksy.Subtitle2"
                         android:layout_marginTop="@dimen/activity_margin"
+                        android:lineSpacingExtra="7sp"
                         android:text="@{viewModel.book.publisher}"
                         tools:text="Penguin Classics" />
 
@@ -295,6 +298,7 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="@style/TextAppearance.Booksy.Subtitle2"
                         android:layout_marginTop="@dimen/activity_margin"
+                        android:lineSpacingExtra="7sp"
                         android:text="@{viewModel.book.authorAbout}"
                         tools:text="Penguin Classics" />
 
