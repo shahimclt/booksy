@@ -22,9 +22,9 @@ import com.bumptech.glide.request.target.Target
 import jp.wasabeef.glide.transformations.BlurTransformation
 import jp.wasabeef.glide.transformations.ColorFilterTransformation
 import me.shahim.booksy.data.model.Book
-import me.shahim.booksy.databinding.FragmentBookDetailBinding
 import androidx.palette.graphics.Palette
 import me.shahim.booksy.R
+import me.shahim.booksy.databinding.FragmentBookDetailBinding
 
 
 class BookDetailFragment : Fragment() {
@@ -51,8 +51,9 @@ class BookDetailFragment : Fragment() {
         bookViewModel.setBookId(args.bookid)
 
         _binding = FragmentBookDetailBinding.inflate(inflater, container, false)
+        binding.lifecycleOwner = this
         binding.bookId = args.bookid
-
+        binding.viewModel = bookViewModel
         binding.executePendingBindings()
         val root: View = binding.root
 
@@ -69,7 +70,11 @@ class BookDetailFragment : Fragment() {
 
     private fun observe() {
         bookViewModel.book.observe(viewLifecycleOwner, {
-            it?.let {  }
+            it?.authorImage?.let { image ->
+                Glide.with(requireContext())
+                    .load(image)
+                    .into(binding.authorImage)
+            }
         })
     }
 

@@ -5,6 +5,7 @@
 
     <data>
         <variable name="bookId" type="String" />
+        <variable name="viewModel" type="me.shahim.booksy.ui.bookdetail.BookViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -35,6 +36,7 @@
                     android:id="@+id/toolbarImage"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@color/light_black_color"
                     android:fitsSystemWindows="true"
                     android:scaleType="centerCrop"
                     app:layout_collapseMode="none" />
@@ -43,7 +45,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:layout_collapseMode="none"
-                    android:layout_gravity="top">
+                    android:layout_gravity="bottom">
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/book_cover"
@@ -66,7 +68,7 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="@style/TextAppearance.Booksy.Headline5"
                         android:textColor="@color/primaryTextColor"
-                        android:maxLines="3"
+                        android:maxLines="2"
                         android:layout_marginHorizontal="@dimen/activity_margin"
                         android:layout_marginBottom="@dimen/line_spacing"
                         app:layout_constraintBottom_toTopOf="@+id/authorName"
@@ -85,7 +87,7 @@
                         android:textAppearance="@style/TextAppearance.Booksy.Subtitle1"
                         android:textColor="@color/primaryTextColorSecondary"
                         android:layout_marginHorizontal="@dimen/activity_margin"
-                        android:layout_marginBottom="64dp"
+                        android:layout_marginBottom="80dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -105,7 +107,202 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <include layout="@layout/content_book_detail" />
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:showIn="@layout/fragment_book_detail"
+            app:behavior_overlapTop="30dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/element_spacing"
+                    android:background="@drawable/bg_book_detail_overlap"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:padding="@dimen/element_spacing"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.Booksy.Headline6"
+                            android:textAlignment="center"
+                            android:text="@{Integer.toString(viewModel.book.pages)}"
+                            tools:text="352" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.Booksy.Caption"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:text="@string/book_detail_pages" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:padding="@dimen/element_spacing"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.Booksy.Headline6"
+                            android:textAlignment="center"
+                            android:text="@{viewModel.book.year}"
+                            tools:text="2015" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.Booksy.Caption"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:text="@string/book_detail_year" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:padding="@dimen/element_spacing"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.Booksy.Headline6"
+                            android:textAlignment="center"
+                            android:text="@{viewModel.book.language}"
+                            tools:text="English" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.Booksy.Caption"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:text="@string/book_detail_language" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/activity_margin"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/loginBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingHorizontal="@dimen/double_margin"
+                        android:text="@string/book_detail_buy_button" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Booksy.Caption"
+                        android:layout_marginTop="@dimen/double_margin"
+                        android:text="@string/book_detail_desc" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Booksy.Subtitle2"
+                        android:layout_marginTop="@dimen/activity_margin"
+                        android:text="@{viewModel.book.desc}"
+                        tools:text="Lorem Ipsum" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Booksy.Caption"
+                        android:layout_marginTop="@dimen/double_margin"
+                        android:text="@string/book_detail_genres" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Booksy.Subtitle2"
+                        android:layout_marginTop="@dimen/activity_margin"
+                        android:text="@{viewModel.book.genreString}"
+                        tools:text="Published By Penguin Classics" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Booksy.Caption"
+                        android:layout_marginTop="@dimen/double_margin"
+                        android:text="@string/book_detail_publisher" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Booksy.Subtitle2"
+                        android:layout_marginTop="@dimen/activity_margin"
+                        android:text="@{viewModel.book.publisher}"
+                        tools:text="Penguin Classics" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Booksy.Caption"
+                        android:layout_marginTop="@dimen/element_spacing"
+                        android:text="@{viewModel.book.publishSentence}"
+                        tools:text="Published By Penguin Classics" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Booksy.Caption"
+                        android:layout_marginTop="@dimen/activity_margin"
+                        android:text="@string/book_detail_authorAbout" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/author_image"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:adjustViewBounds="true"
+                        android:layout_marginTop="@dimen/activity_margin"
+                        android:scaleType="centerCrop"
+                        android:background="@color/colorSurface"
+                        app:shapeAppearance="@style/ShapeAppearance.App.ProfileImageView" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Booksy.Subtitle2"
+                        android:layout_marginTop="@dimen/activity_margin"
+                        android:text="@{viewModel.book.authorAbout}"
+                        tools:text="Penguin Classics" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

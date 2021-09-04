@@ -18,4 +18,14 @@
 
 
     <string name="bookCoverTransition">bookCover:%s</string>
+
+    <string name="book_detail_pages">Pages</string>
+    <string name="book_detail_year">Year</string>
+    <string name="book_detail_language">Language</string>
+    <string name="book_detail_desc">Description</string>
+    <string name="book_detail_genres">Genres</string>
+    <string name="book_detail_publisher">Publisher</string>
+    <string name="book_detail_authorAbout">About Author</string>
+
+    <string name="book_detail_buy_button">buy this book</string>
 </resources>

@@ -111,6 +111,11 @@
         <item name="cornerSize">6dp</item>
     </style>
 
+    <style name="ShapeAppearance.App.ProfileImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
     <style name="PosterText" parent="TextAppearance.Booksy.Headline5">
 <!--        <item name="android:fontFamily">@font/montserrat_bold</item>-->
 <!--        <item name="android:textSize">32sp</item>-->

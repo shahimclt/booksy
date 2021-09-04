@@ -7,4 +7,7 @@
     <color name="colorTranslucentOverlayLight">#11FFFFFF</color>
     <color name="colorTranslucentOverlayMedium">#22FFFFFF</color>
     <color name="colorTranslucentOverlayHeavy">#44FFFFFF</color>
+
+    <color name="colorBackground">#1d212b</color>
+    <color name="colorSurface">#292d36</color>
 </resources>

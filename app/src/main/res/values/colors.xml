@@ -50,19 +50,19 @@
     <color name="colorInfoLight">#69e2ff</color>
     <color name="colorInfoLighter">#C6F4FF</color>
 
-    <color name="colorSurface">#FFFFFF</color>
-    <color name="colorOnSurface">@color/textColorPrimary</color>
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorOnBackground">@color/textColorPrimary</color>
 
     <color name="colorTranslucentOverlayLight">#11000000</color>
     <color name="colorTranslucentOverlayMedium">#22000000</color>
     <color name="colorTranslucentOverlayHeavy">#44000000</color>
 
-    <color name="colorSecondarySurface">#f0f0f0</color>
-    <color name="colorSecondarySurfaceDivider">#22000000</color>
+    <color name="colorSurface">#f0f0f0</color>
+    <color name="colorSurfaceDivider">#22000000</color>
     <color name="textColorCard">#EFE7E7</color>
 
     <!--    Specific Colors   -->
-    <color name="colorChipBackground">#4400bfa5</color>
+    <color name="colorChipBackground">#7700bfa5</color>
 
-    <color name="poster_overlay">#551c232e</color>
+    <color name="poster_overlay">#991c232e</color>
 </resources>

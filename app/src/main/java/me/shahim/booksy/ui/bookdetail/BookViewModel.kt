@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.*
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.EventListener
+import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.QuerySnapshot
 import me.shahim.booksy.data.model.Book
 import me.shahim.booksy.data.repository.BookRepository
@@ -16,19 +17,27 @@ class BookViewModel(application: Application) : AndroidViewModel(application) {
 
     fun setBookId(id: String) {
         _bookId.value = id
+        loadBook(id)
     }
 
-    val book: LiveData<Book> = Transformations.switchMap(_bookId) { id ->
+    private var bookRefListener: ListenerRegistration? = null
 
-        val ld: MutableLiveData<Book?> = MutableLiveData(null)
-        bookRepo.getBookRef(id).addSnapshotListener(EventListener<DocumentSnapshot> { value, e ->
+    private val _book: MutableLiveData<Book?> = MutableLiveData(null)
+    val book: LiveData<Book?> = _book
+
+    private fun loadBook(id: String) {
+        bookRefListener?.remove()
+        bookRefListener = bookRepo.getBookRef(id).addSnapshotListener(EventListener<DocumentSnapshot> { value, e ->
             if (e != null) {
                 //TODO notify error
             }
             val book = value?.toObject(Book::class.java)
-            ld.postValue(book)
+            _book.postValue(book)
         })
+    }
 
-        return@switchMap ld
+    override fun onCleared() {
+        super.onCleared()
+        bookRefListener?.remove()
     }
 }

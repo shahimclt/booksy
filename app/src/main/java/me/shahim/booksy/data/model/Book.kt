@@ -20,4 +20,9 @@ data class Book(
     val bookLink: String = "",
     val authorImage: String = "",
     val authorAbout: String = ""
-)
+) {
+    val genreString: String
+        get() {
+            return genres.joinToString(", ")
+        }
+}
