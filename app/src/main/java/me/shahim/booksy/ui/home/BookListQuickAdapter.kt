@@ -14,6 +14,7 @@ class BookListQuickAdapter(data: MutableList<Book>?): BaseQuickAdapter<Book, Bas
     override fun convert(holder: BaseDataBindingHolder<ListBookItemBinding>, item: Book) {
         holder.dataBinding?.apply {
             book = item
+            executePendingBindings()
         }
         Glide.with(context)
             .load(item.coverImage)

@@ -4,14 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.FragmentNavigator
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.chad.library.adapter.base.animation.SlideInBottomAnimation
+import com.google.android.material.imageview.ShapeableImageView
 import me.shahim.booksy.R
 import me.shahim.booksy.data.model.Book
 import me.shahim.booksy.databinding.FragmentHomeBinding
@@ -38,6 +42,12 @@ class HomeFragment : Fragment() {
         init()
         observe()
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        postponeEnterTransition()
+        view.doOnPreDraw { startPostponedEnterTransition() }
     }
 
     private fun init() {
@@ -84,9 +94,13 @@ class HomeFragment : Fragment() {
 
             setOnItemClickListener { adapter, view, position ->
                 val book = adapter.getItem(position) as Book
-                val action =
-                    HomeFragmentDirections.actionNavigationHomeToBookDetailFragment(book.id)
-                findNavController().navigate(action)
+                val action = HomeFragmentDirections.actionNavigationHomeToBookDetailFragment(book.id,book.title,book.author,book.coverImage)
+                val coverView = view.findViewById(R.id.book_cover) as View
+                val extras = FragmentNavigator.Extras.Builder()
+                    .addSharedElements(
+                        mapOf(coverView to coverView.transitionName)
+                    ).build()
+                findNavController().navigate(action,extras)
             }
         }
     }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable name="bookId" type="String" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -52,6 +52,7 @@
                         android:adjustViewBounds="true"
                         android:elevation="16dp"
                         android:scaleType="fitXY"
+                        android:transitionName="@{@string/bookCoverTransition(bookId)}"
                         app:layout_constraintBottom_toTopOf="@+id/bookName"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"

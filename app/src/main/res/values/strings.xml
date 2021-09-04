@@ -15,4 +15,7 @@
 
 
     <string name="book_list_extra_detail">%d pages, %s</string>
+
+
+    <string name="bookCoverTransition">bookCover:%s</string>
 </resources>

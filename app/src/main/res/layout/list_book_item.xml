@@ -14,7 +14,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/activity_margin"
+        android:paddingHorizontal="@dimen/activity_margin"
+        android:paddingVertical="@dimen/element_spacing"
         >
 
         <com.google.android.material.imageview.ShapeableImageView
@@ -24,6 +25,7 @@
             android:adjustViewBounds="true"
             android:elevation="4dp"
             android:scaleType="fitXY"
+            android:transitionName="@{@string/bookCoverTransition(book.id)}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:shapeAppearance="@style/ShapeAppearance.App.RoundedImageView"
