@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.chad.library.adapter.base.animation.SlideInBottomAnimation
 import me.shahim.booksy.R
@@ -79,11 +80,9 @@ class HomeFragment : Fragment() {
 
             setOnItemClickListener { adapter, view, position ->
                 val book = adapter.getItem(position) as Book
-//                val action =
-//                    TrainingListFragmentDirections.actionTrainingListFragmentToTrainingDetailFragment(
-//                        session.sessionId
-//                    )
-//                findNavController().navigate(action)
+                val action =
+                    HomeFragmentDirections.actionNavigationHomeToBookDetailFragment()
+                findNavController().navigate(action)
             }
         }
     }

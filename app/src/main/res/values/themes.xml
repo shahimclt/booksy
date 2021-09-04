@@ -35,4 +35,8 @@
 <!--        <item name="colorPrimaryVariant">@color/colorSecondarySurface</item>-->
 <!--        <item name="colorOnPrimary">@color/colorOnSurface</item>-->
     </style>
+
+    <style name="Theme.Booksy.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Booksy.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
