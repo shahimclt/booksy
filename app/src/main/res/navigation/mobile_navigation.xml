@@ -50,5 +50,13 @@
             android:name="cover"
             app:argType="string"
             app:nullable="true" />
+        <action
+            android:id="@+id/action_bookDetailFragment_to_readerFragment"
+            app:destination="@id/readerFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/readerFragment"
+        android:name="me.shahim.booksy.ui.bookdetail.ReaderFragment"
+        tools:layout="@layout/fragment_reader"
+        android:label="ReaderFragment" />
 </navigation>

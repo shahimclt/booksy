@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
@@ -69,6 +70,10 @@ class BookDetailFragment : Fragment() {
 
         binding.buyBtn.setOnClickListener {
             bookViewModel.buy()
+        }
+        binding.readBtn.setOnClickListener {
+            val action = BookDetailFragmentDirections.actionBookDetailFragmentToReaderFragment()
+            findNavController().navigate(action)
         }
     }
 

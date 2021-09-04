@@ -46,16 +46,16 @@ class MainActivity : AppCompatActivity() {
 //                    R.id.navigation_home, R.id.navigation_bookshelf, R.id.navigation_account))
 //                setupActionBarWithNavController(navController, appBarConfiguration)
                 navView.setupWithNavController(navController)
-//                navController.addOnDestinationChangedListener { controller, destination, arguments ->
-//                    when (destination.id) {
-//                        R.id.navigation_home,R.id.navigation_bookshelf, R.id.navigation_account -> {
-//                            navView.visibility = View.VISIBLE
-//                        }
-//                        else -> {
-//                            navView.visibility = View.GONE
-//                        }
-//                    }
-//                }
+                navController.addOnDestinationChangedListener { controller, destination, arguments ->
+                    when (destination.id) {
+                        R.id.navigation_home,R.id.navigation_bookshelf, R.id.navigation_account, R.id.bookDetailFragment -> {
+                            navView.visibility = View.VISIBLE
+                        }
+                        else -> {
+                            navView.visibility = View.GONE
+                        }
+                    }
+                }
             }
         }
     }
