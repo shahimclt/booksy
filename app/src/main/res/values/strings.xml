@@ -25,6 +25,7 @@
     <string name="book_detail_desc">Description</string>
     <string name="book_detail_genres">Genres</string>
     <string name="book_detail_publisher">Publisher</string>
+    <string name="book_detail_isbn">ISBN</string>
     <string name="book_detail_authorAbout">About Author</string>
 
     <string name="book_detail_buy_button">buy this book</string>

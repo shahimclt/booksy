@@ -9,15 +9,20 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
 import me.shahim.booksy.MainActivity
 import me.shahim.booksy.databinding.FragmentLoginBinding
 import me.shahim.booksy.databinding.FragmentLoginLoadingBinding
+import me.shahim.booksy.ui.account.AccountViewModel
 
 class LoginLoadingFragment : Fragment() {
 
     private var _binding: FragmentLoginLoadingBinding? = null
+
+    private val mainViewModel: AccountViewModel by activityViewModels()
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -47,11 +52,15 @@ class LoginLoadingFragment : Fragment() {
 
             val response = IdpResponse.fromResultIntent(data)
 
+            mainViewModel.loggedIn()
+
             startActivity(Intent(activity, MainActivity::class.java))
             activity?.finish()
 
         } else {
             Toast.makeText(context, "Not Success", Toast.LENGTH_SHORT).show()
+            val action = LoginLoadingFragmentDirections.actionLoginLoadingFragmentToLoginWelcomeFragment()
+            findNavController().navigate(action)
         }
     }
 

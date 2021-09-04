@@ -66,6 +66,10 @@ class BookDetailFragment : Fragment() {
 
     private fun init() {
         loadBookHeader()
+
+        binding.buyBtn.setOnClickListener {
+            bookViewModel.buy()
+        }
     }
 
     private fun observe() {

@@ -17,5 +17,11 @@
         android:id="@+id/loginLoadingFragment"
         android:name="me.shahim.booksy.ui.login.LoginLoadingFragment"
         android:label="fragment_login_loading"
-        tools:layout="@layout/fragment_login_loading" />
+        tools:layout="@layout/fragment_login_loading" >
+        <action
+            android:id="@+id/action_loginLoadingFragment_to_loginWelcomeFragment"
+            app:destination="@id/loginWelcomeFragment"
+            app:popUpTo="@id/loginWelcomeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

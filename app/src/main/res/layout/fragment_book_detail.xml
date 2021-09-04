@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="android.view.View"/>
         <variable name="bookId" type="String" />
         <variable name="viewModel" type="me.shahim.booksy.ui.bookdetail.BookViewModel" />
     </data>
@@ -212,13 +213,40 @@
                     android:padding="@dimen/activity_margin"
                     android:orientation="vertical">
 
-                    <Button
-                        android:id="@+id/loginBtn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:paddingHorizontal="@dimen/double_margin"
-                        android:text="@string/book_detail_buy_button" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/buyHolder"
+                        android:layout_width="match_parent"
+                        android:visibility="@{viewModel.bookOwned ? View.GONE : View.VISIBLE}"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_horizontal">
+
+                        <Button
+                            android:id="@+id/buyBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="@dimen/double_margin"
+                            android:text="@string/book_detail_buy_button"
+                            android:visibility="@{viewModel.bookBuyLoading ? View.GONE : View.VISIBLE}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ProgressBar
+                            android:id="@+id/progressBar2"
+                            style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/double_margin"
+                            android:indeterminate="true"
+                            android:visibility="@{viewModel.bookBuyLoading ? View.VISIBLE : View.GONE}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
@@ -251,6 +279,22 @@
                         android:lineSpacingExtra="7sp"
                         android:text="@{viewModel.book.genreString}"
                         tools:text="Published By Penguin Classics" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Booksy.Caption"
+                        android:layout_marginTop="@dimen/double_margin"
+                        android:text="@string/book_detail_isbn" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Booksy.Subtitle2"
+                        android:layout_marginTop="@dimen/activity_margin"
+                        android:lineSpacingExtra="7sp"
+                        android:text="@{viewModel.book.isbn}"
+                        tools:text="Penguin Classics" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
