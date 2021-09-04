@@ -45,13 +45,13 @@ class HomeFragment : Fragment() {
     }
 
     private fun observe() {
-        homeViewModel.greeting.observe(viewLifecycleOwner, Observer { greeting ->
-            binding.nameGreeting.text = when (greeting) {
-                HomeViewModel.MORNING -> getString(R.string.home_greeting_morning)
-                HomeViewModel.AFTERNOON -> getString(R.string.home_greeting_noon)
-                else -> getString(R.string.home_greeting_evening)
-            }
-        })
+//        homeViewModel.greeting.observe(viewLifecycleOwner, Observer { greeting ->
+//            binding.nameGreeting.text = when (greeting) {
+//                HomeViewModel.MORNING -> getString(R.string.home_greeting_morning)
+//                HomeViewModel.AFTERNOON -> getString(R.string.home_greeting_noon)
+//                else -> getString(R.string.home_greeting_evening)
+//            }
+//        })
 
         homeViewModel.allBooks.observe(viewLifecycleOwner) {
             mAdapter.setDiffNewData(it.toMutableList())
