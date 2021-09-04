@@ -9,11 +9,13 @@
         <item name="colorSecondary">@color/colorSecondary</item>
         <item name="colorSecondaryVariant">@color/colorSecondaryDark</item>
         <item name="colorOnSecondary">@color/secondaryTextColor</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <!-- Customize your theme here. -->
-<!--        <item name="toolbarStyle">@style/Widget.Booksy.Toolbar</item>-->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+
+        <!--        For transitions -->
+        <item name="android:windowContentTransitions">true</item>
+
     </style>
 
     <style name="Widget.Booksy.Toolbar" parent="Widget.MaterialComponents.Toolbar.PrimarySurface">
