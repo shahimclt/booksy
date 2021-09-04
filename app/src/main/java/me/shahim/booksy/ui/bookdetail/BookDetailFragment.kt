@@ -2,6 +2,8 @@ package me.shahim.booksy.ui.bookdetail
 
 import android.graphics.Bitmap
 import android.graphics.Color
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,13 +14,19 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.MultiTransformation
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.RequestOptions
+import com.bumptech.glide.request.target.Target
 import jp.wasabeef.glide.transformations.BlurTransformation
 import jp.wasabeef.glide.transformations.ColorFilterTransformation
-import me.shahim.booksy.R
 import me.shahim.booksy.data.model.Book
 import me.shahim.booksy.databinding.FragmentBookDetailBinding
+import androidx.palette.graphics.Palette
+import me.shahim.booksy.R
+
 
 class BookDetailFragment : Fragment() {
 
@@ -64,7 +72,7 @@ class BookDetailFragment : Fragment() {
             bookName.text = book.title
             authorName.text = book.author
 
-            val overlay = ContextCompat.getColor(requireContext(),R.color.poster_overlay)
+            val overlay = ContextCompat.getColor(requireContext(), R.color.poster_overlay)
 
             val multi = MultiTransformation<Bitmap>(
                 BlurTransformation(100,1),
@@ -75,6 +83,36 @@ class BookDetailFragment : Fragment() {
                 .load(book.coverImage)
                 .placeholder(R.drawable.im_book_cover_placeholder)
                 .error(R.drawable.im_book_cover_placeholder)
+                .listener(object: RequestListener<Drawable>{
+                    override fun onLoadFailed(
+                        e: GlideException?,
+                        model: Any?,
+                        target: Target<Drawable>?,
+                        isFirstResource: Boolean
+                    ): Boolean {
+                        TODO("Not yet implemented")
+                    }
+
+                    override fun onResourceReady(
+                        resource: Drawable?,
+                        model: Any?,
+                        target: Target<Drawable>?,
+                        dataSource: DataSource?,
+                        isFirstResource: Boolean
+                    ): Boolean {
+                        if (resource != null) {
+                            val p: Palette = Palette.from((resource as BitmapDrawable).bitmap).generate()
+                            var color = ContextCompat.getColor(requireContext(),R.color.colorPrimary)
+                            color = p.getVibrantColor(color)
+                            if(p.vibrantSwatch==null) {
+                                color = p.swatches.sortedByDescending { it.population }.getOrNull(0)?.rgb?:color
+                            }
+                            collapsingToolbar.setContentScrimColor(color)
+                        }
+                        return false
+                    }
+
+                })
                 .apply(RequestOptions.bitmapTransform(multi))
                 .into(toolbarImage)
 

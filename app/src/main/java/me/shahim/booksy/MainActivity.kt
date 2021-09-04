@@ -2,6 +2,7 @@ package me.shahim.booksy
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -41,18 +42,18 @@ class MainActivity : AppCompatActivity() {
                 val navController = findNavController(R.id.nav_host_fragment_activity_main)
                 // Passing each menu ID as a set of Ids because each
                 // menu should be considered as top level destinations.
-                val appBarConfiguration = AppBarConfiguration(setOf(
-                    R.id.navigation_home, R.id.navigation_bookshelf, R.id.navigation_account))
+//                val appBarConfiguration = AppBarConfiguration(setOf(
+//                    R.id.navigation_home, R.id.navigation_bookshelf, R.id.navigation_account))
 //                setupActionBarWithNavController(navController, appBarConfiguration)
                 navView.setupWithNavController(navController)
                 navController.addOnDestinationChangedListener { controller, destination, arguments ->
                     when (destination.id) {
-//                        R.id.trainingListFragment,R.id.beaconListFragment, R.id.bayListFragment, R.id.settingsFragment -> {
-//                            nav_view.visibility = View.VISIBLE
-//                        }
-//                        else -> {
-//                            nav_view.visibility = View.GONE
-//                        }
+                        R.id.navigation_home,R.id.navigation_bookshelf, R.id.navigation_account -> {
+                            navView.visibility = View.VISIBLE
+                        }
+                        else -> {
+                            navView.visibility = View.GONE
+                        }
                     }
                 }
             }

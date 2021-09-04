@@ -81,7 +81,7 @@
                         android:ellipsize="end"
                         android:fontFamily="@font/roboto_medium"
                         android:maxLines="1"
-                        android:textAppearance="@style/TextAppearance.Booksy.Subtitle2"
+                        android:textAppearance="@style/TextAppearance.Booksy.Subtitle1"
                         android:textColor="@color/primaryTextColorSecondary"
                         android:layout_marginHorizontal="@dimen/activity_margin"
                         android:layout_marginBottom="64dp"
