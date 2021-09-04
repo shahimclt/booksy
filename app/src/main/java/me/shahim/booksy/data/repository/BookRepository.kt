@@ -1,6 +1,7 @@
 package me.shahim.booksy.data.repository
 
 import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import me.shahim.booksy.data.model.Book
@@ -19,6 +20,10 @@ class BookRepository {
 
     fun getBookListRef(): CollectionReference {
         return db.collection("books")
+    }
+
+    fun getBookRef(id: String): DocumentReference {
+        return db.collection("books").document(id)
     }
 }
 

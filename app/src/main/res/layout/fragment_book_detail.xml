@@ -41,14 +41,15 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="bottom">
+                    app:layout_collapseMode="none"
+                    android:layout_gravity="top">
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/book_cover"
                         android:layout_width="wrap_content"
                         android:layout_height="220dp"
                         android:adjustViewBounds="true"
-                        android:elevation="6dp"
+                        android:elevation="16dp"
                         android:scaleType="fitXY"
                         app:layout_constraintBottom_toTopOf="@+id/bookName"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -82,7 +83,7 @@
                         android:textAppearance="@style/TextAppearance.Booksy.Subtitle2"
                         android:textColor="@color/primaryTextColorSecondary"
                         android:layout_marginHorizontal="@dimen/activity_margin"
-                        android:layout_marginBottom="@dimen/double_margin"
+                        android:layout_marginBottom="64dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"

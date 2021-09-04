@@ -30,5 +30,9 @@
         android:id="@+id/bookDetailFragment"
         android:name="me.shahim.booksy.ui.bookdetail.BookDetailFragment"
         android:label="BookDetailFragment"
-        tools:layout="@layout/fragment_book_detail"/>
+        tools:layout="@layout/fragment_book_detail">
+        <argument
+            android:name="bookid"
+            app:argType="string" />
+    </fragment>
 </navigation>

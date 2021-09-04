@@ -81,7 +81,7 @@ class HomeFragment : Fragment() {
             setOnItemClickListener { adapter, view, position ->
                 val book = adapter.getItem(position) as Book
                 val action =
-                    HomeFragmentDirections.actionNavigationHomeToBookDetailFragment()
+                    HomeFragmentDirections.actionNavigationHomeToBookDetailFragment(book.id)
                 findNavController().navigate(action)
             }
         }

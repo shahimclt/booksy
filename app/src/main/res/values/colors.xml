@@ -63,4 +63,6 @@
 
     <!--    Specific Colors   -->
     <color name="colorChipBackground">#4400bfa5</color>
+
+    <color name="poster_overlay">#551c232e</color>
 </resources>
