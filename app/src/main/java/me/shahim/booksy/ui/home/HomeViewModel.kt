@@ -22,7 +22,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     private val _userName = MutableLiveData("")
     val userName: LiveData<String> = _userName
 
-    private val _allBooks = MutableLiveData<List<Book>>()
+    private val _allBooks = MutableLiveData<List<Book>>(listOf())
     val allBooks: LiveData<List<Book>> = _allBooks
 
     init {

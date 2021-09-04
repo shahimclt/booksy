@@ -15,4 +15,20 @@
 
 
     <string name="book_list_extra_detail">%d pages, %s</string>
+
+
+    <string name="bookCoverTransition">bookCover:%s</string>
+
+    <string name="book_detail_pages">Pages</string>
+    <string name="book_detail_year">Year</string>
+    <string name="book_detail_language">Language</string>
+    <string name="book_detail_desc">Description</string>
+    <string name="book_detail_genres">Genres</string>
+    <string name="book_detail_publisher">Publisher</string>
+    <string name="book_detail_isbn">ISBN</string>
+    <string name="book_detail_authorAbout">About Author</string>
+
+    <string name="book_detail_buy_button">buy this book</string>
+    <string name="book_detail_read_button">start reading</string>
+    <string name="book_detail_own_statement">You own this book</string>
 </resources>

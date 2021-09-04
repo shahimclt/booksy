@@ -2,11 +2,11 @@ package me.shahim.booksy
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import me.shahim.booksy.databinding.ActivityMainBinding
@@ -42,18 +42,18 @@ class MainActivity : AppCompatActivity() {
                 val navController = findNavController(R.id.nav_host_fragment_activity_main)
                 // Passing each menu ID as a set of Ids because each
                 // menu should be considered as top level destinations.
-                val appBarConfiguration = AppBarConfiguration(setOf(
-                    R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications))
+//                val appBarConfiguration = AppBarConfiguration(setOf(
+//                    R.id.navigation_home, R.id.navigation_bookshelf, R.id.navigation_account))
 //                setupActionBarWithNavController(navController, appBarConfiguration)
                 navView.setupWithNavController(navController)
                 navController.addOnDestinationChangedListener { controller, destination, arguments ->
                     when (destination.id) {
-//                        R.id.trainingListFragment,R.id.beaconListFragment, R.id.bayListFragment, R.id.settingsFragment -> {
-//                            nav_view.visibility = View.VISIBLE
-//                        }
-//                        else -> {
-//                            nav_view.visibility = View.GONE
-//                        }
+                        R.id.navigation_home,R.id.navigation_bookshelf, R.id.navigation_account, R.id.bookDetailFragment -> {
+                            navView.visibility = View.VISIBLE
+                        }
+                        else -> {
+                            navView.visibility = View.GONE
+                        }
                     }
                 }
             }

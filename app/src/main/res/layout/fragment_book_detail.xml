@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable name="bookId" type="String" />
+        <variable name="viewModel" type="me.shahim.booksy.ui.bookdetail.BookViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/book_detail_appbar_height"
+            android:fitsSystemWindows="true"
+            android:theme="@style/Theme.Booksy.AppBarOverlay">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsingToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:statusBarScrim="@color/transparent"
+                app:contentScrim="@color/colorPrimary"
+                tools:title="The Origin of Species"
+                app:expandedTitleGravity="top"
+                app:expandedTitleTextAppearance="@style/PosterText"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <ImageView
+                    android:id="@+id/toolbarImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/light_black_color"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerCrop"
+                    app:layout_collapseMode="none" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_collapseMode="none"
+                    android:layout_gravity="bottom">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/book_cover"
+                        android:layout_width="wrap_content"
+                        android:layout_height="220dp"
+                        android:adjustViewBounds="true"
+                        android:elevation="16dp"
+                        android:scaleType="fitXY"
+                        android:transitionName="@{@string/bookCoverTransition(bookId)}"
+                        app:layout_constraintBottom_toTopOf="@+id/bookName"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearance="@style/ShapeAppearance.App.RoundedImageView"
+                        app:srcCompat="@drawable/im_book_cover_placeholder" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/bookName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Booksy.Headline5"
+                        android:textColor="@color/primaryTextColor"
+                        android:maxLines="2"
+                        android:layout_marginHorizontal="@dimen/activity_margin"
+                        android:layout_marginBottom="@dimen/line_spacing"
+                        app:layout_constraintBottom_toTopOf="@+id/authorName"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:textAlignment="center"
+                        tools:text="Harry Potter and the Chamber of Secrets" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/authorName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/roboto_medium"
+                        android:maxLines="1"
+                        android:textAppearance="@style/TextAppearance.Booksy.Subtitle1"
+                        android:textColor="@color/primaryTextColorSecondary"
+                        android:layout_marginHorizontal="@dimen/activity_margin"
+                        android:layout_marginBottom="80dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:textAlignment="center"
+                        tools:text="J K Rowling" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/Theme.Booksy.PopupOverlay" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:showIn="@layout/fragment_book_detail"
+            app:behavior_overlapTop="30dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/element_spacing"
+                    android:background="@drawable/bg_book_detail_overlap"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:padding="@dimen/element_spacing"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.Booksy.Headline6"
+                            android:textAlignment="center"
+                            android:text="@{Integer.toString(viewModel.book.pages)}"
+                            tools:text="352" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.Booksy.Caption"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:text="@string/book_detail_pages" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:padding="@dimen/element_spacing"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.Booksy.Headline6"
+                            android:textAlignment="center"
+                            android:text="@{viewModel.book.year}"
+                            tools:text="2015" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.Booksy.Caption"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:text="@string/book_detail_year" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:padding="@dimen/element_spacing"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.Booksy.Headline6"
+                            android:textAlignment="center"
+                            android:text="@{viewModel.book.language}"
+                            tools:text="English" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.Booksy.Caption"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:text="@string/book_detail_language" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/activity_margin"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/buyHolder"
+                        android:layout_width="match_parent"
+                        android:visibility="@{viewModel.bookOwned ? View.GONE : View.VISIBLE}"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_horizontal">
+
+                        <Button
+                            android:id="@+id/buyBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="@dimen/double_margin"
+                            android:text="@string/book_detail_buy_button"
+                            android:visibility="@{viewModel.bookBuyLoading ? View.GONE : View.VISIBLE}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ProgressBar
+                            android:id="@+id/progressBar2"
+                            style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/double_margin"
+                            android:indeterminate="true"
+                            android:visibility="@{viewModel.bookBuyLoading ? View.VISIBLE : View.GONE}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/ownHolder"
+                        android:layout_width="match_parent"
+                        android:visibility="@{viewModel.bookOwned ? View.VISIBLE : View.GONE}"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/book_detail_own_statement"
+                            android:textAppearance="@style/TextAppearance.Booksy.Subtitle1"
+                            android:layout_marginEnd="@dimen/activity_margin"
+                            android:textColor="@color/colorSuccessDark"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/readBtn"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <Button
+                            android:id="@+id/readBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="@dimen/double_margin"
+                            android:text="@string/book_detail_read_button"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Booksy.Caption"
+                        android:layout_marginTop="@dimen/double_margin"
+                        android:text="@string/book_detail_desc" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Booksy.Subtitle2"
+                        android:layout_marginTop="@dimen/activity_margin"
+                        android:lineSpacingExtra="7sp"
+                        android:text="@{viewModel.book.desc}"
+                        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum massa eros, elementum vel varius non, pulvinar et ante. Ut vehicula, mauris id feugiat viverra, neque felis aliquam diam, congue ullamcorper erat nisl eget mi. Morbi efficitur erat et diam congue pellentesque. Praesent ac tempus tellus. Ut imperdiet ex eros, sit amet aliquam urna finibus eget. In malesuada ultricies urna. Suspendisse aliquam, tortor vel accumsan euismod, mauris tortor commodo nunc, ac egestas libero enim vitae sem. Proin nec ultricies nisi. Donec sed vulputate diam. Aenean vestibulum velit et mi faucibus, at eleifend nisi aliquam. Integer aliquam vestibulum fermentum. Proin bibendum, sapien." />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Booksy.Caption"
+                        android:layout_marginTop="@dimen/double_margin"
+                        android:text="@string/book_detail_genres" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Booksy.Subtitle2"
+                        android:layout_marginTop="@dimen/activity_margin"
+                        android:lineSpacingExtra="7sp"
+                        android:text="@{viewModel.book.genreString}"
+                        tools:text="Published By Penguin Classics" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Booksy.Caption"
+                        android:layout_marginTop="@dimen/double_margin"
+                        android:text="@string/book_detail_isbn" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Booksy.Subtitle2"
+                        android:layout_marginTop="@dimen/activity_margin"
+                        android:lineSpacingExtra="7sp"
+                        android:text="@{viewModel.book.isbn}"
+                        tools:text="Penguin Classics" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Booksy.Caption"
+                        android:layout_marginTop="@dimen/double_margin"
+                        android:text="@string/book_detail_publisher" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Booksy.Subtitle2"
+                        android:layout_marginTop="@dimen/activity_margin"
+                        android:lineSpacingExtra="7sp"
+                        android:text="@{viewModel.book.publisher}"
+                        tools:text="Penguin Classics" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Booksy.Caption"
+                        android:layout_marginTop="@dimen/element_spacing"
+                        android:text="@{viewModel.book.publishSentence}"
+                        tools:text="Published By Penguin Classics" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Booksy.Caption"
+                        android:layout_marginTop="@dimen/activity_margin"
+                        android:text="@string/book_detail_authorAbout" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/author_image"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:adjustViewBounds="true"
+                        android:layout_marginTop="@dimen/activity_margin"
+                        android:scaleType="centerCrop"
+                        android:background="@color/colorSurface"
+                        app:shapeAppearance="@style/ShapeAppearance.App.ProfileImageView" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Booksy.Subtitle2"
+                        android:layout_marginTop="@dimen/activity_margin"
+                        android:lineSpacingExtra="7sp"
+                        android:text="@{viewModel.book.authorAbout}"
+                        tools:text="Penguin Classics" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>
