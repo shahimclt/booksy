@@ -1,4 +1,4 @@
-package me.shahim.booksy.ui.home
+package me.shahim.booksy.ui.bookshelf
 
 import androidx.recyclerview.widget.DiffUtil
 import com.bumptech.glide.Glide
@@ -6,12 +6,13 @@ import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import me.shahim.booksy.R
 import me.shahim.booksy.data.model.Book
+import me.shahim.booksy.databinding.GridBookItemBinding
 import me.shahim.booksy.databinding.ListBookItemBinding
 
-class BookListQuickAdapter( data: MutableList<Book>?): BaseQuickAdapter<Book, BaseDataBindingHolder<ListBookItemBinding>>(
-    R.layout.list_book_item,data) {
+class BookGridQuickAdapter(data: MutableList<Book>?): BaseQuickAdapter<Book, BaseDataBindingHolder<GridBookItemBinding>>(
+    R.layout.grid_book_item,data) {
 
-    override fun convert(holder: BaseDataBindingHolder<ListBookItemBinding>, item: Book) {
+    override fun convert(holder: BaseDataBindingHolder<GridBookItemBinding>, item: Book) {
         holder.dataBinding?.apply {
             book = item
             executePendingBindings()
