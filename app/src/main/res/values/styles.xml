@@ -34,7 +34,7 @@
 
     <style name="ThemeOverlay.App.Button.Primary" parent="">
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorOnPrimary">@color/primaryTextColor</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
     </style>
 
     <style name="ThemeOverlay.App.Button.Secondary" parent="">
@@ -105,15 +105,35 @@
         <item name="colorOnPrimary">@color/textColorPrimary</item>
     </style>
 
+    <style name="ContainedButton" parent="Widget.MaterialComponents.Button"></style>
+
+    <style name="ContainedButton.Secondary">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Secondary</item>
+    </style>
+
+    <style name="ContainedOutlineButton" parent="Widget.MaterialComponents.Button.OutlinedButton"></style>
+
+    <style name="ContainedOutlineButton.Secondary">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Secondary</item>
+    </style>
+
+    <style name="ThemeOverlay.Secondary" parent="">
+        <item name="colorPrimary">@color/colorSecondary</item>
+        <item name="colorOnPrimary">@color/colorOnSecondary</item>
+    </style>
+
 <!--    Rounded ImageView   -->
     <style name="ShapeAppearance.App.RoundedImageView" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">6dp</item>
     </style>
 
-    <style name="ShapeAppearance.App.ProfileImageView" parent="">
-        <item name="cornerFamily">rounded</item>
+    <style name="ShapeAppearance.App.RoundedImageView.Medium" parent="">
         <item name="cornerSize">12dp</item>
+    </style>
+
+    <style name="ShapeAppearance.App.RoundedImageView.Circle" parent="">
+        <item name="cornerSize">30dp</item>
     </style>
 
     <style name="PosterText" parent="TextAppearance.Booksy.Headline5">

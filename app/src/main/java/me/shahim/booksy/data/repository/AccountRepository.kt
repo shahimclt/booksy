@@ -38,7 +38,7 @@ class AccountRepository () {
         return FirebaseAuth.getInstance().currentUser
     }
 
-    fun refreshLoginStatus() {
-
+    fun logoutUser() {
+        FirebaseAuth.getInstance().signOut()
     }
 }

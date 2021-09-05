@@ -68,7 +68,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:textAppearance="@style/TextAppearance.Booksy.Headline5"
-                        android:textColor="@color/primaryTextColor"
+                        android:textColor="@color/colorOnPrimary"
                         android:maxLines="2"
                         android:layout_marginHorizontal="@dimen/activity_margin"
                         android:layout_marginBottom="@dimen/line_spacing"
@@ -86,7 +86,7 @@
                         android:fontFamily="@font/roboto_medium"
                         android:maxLines="1"
                         android:textAppearance="@style/TextAppearance.Booksy.Subtitle1"
-                        android:textColor="@color/primaryTextColorSecondary"
+                        android:textColor="@color/colorOnPrimaryMuted"
                         android:layout_marginHorizontal="@dimen/activity_margin"
                         android:layout_marginBottom="80dp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -272,6 +272,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingHorizontal="@dimen/double_margin"
+                            style="Icon"
                             android:text="@string/book_detail_read_button"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -367,7 +368,7 @@
                         android:layout_marginTop="@dimen/activity_margin"
                         android:scaleType="centerCrop"
                         android:background="@color/colorSurface"
-                        app:shapeAppearance="@style/ShapeAppearance.App.ProfileImageView" />
+                        app:shapeAppearance="@style/ShapeAppearance.App.RoundedImageView.Medium" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"

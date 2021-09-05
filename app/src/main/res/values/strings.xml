@@ -5,7 +5,7 @@
     <string name="title_account">Account</string>
 
 <!--    Login Page   -->
-    <string name="login_prompt">login to get started</string>
+    <string name="login_prompt">Sign in to get started</string>
 
 <!--    Home page   -->
     <string name="home_all_books">All Books</string>
@@ -31,4 +31,10 @@
     <string name="book_detail_buy_button">buy this book</string>
     <string name="book_detail_read_button">start reading</string>
     <string name="book_detail_own_statement">You own this book</string>
+
+    <string name="page_title_bookshelf">My Bookshelf</string>
+    <string name="page_title_account">My Account</string>
+
+    <string name="account_logged_in_label">Signed in as</string>
+    <string name="account_logout_button">Sign Out</string>
 </resources>
