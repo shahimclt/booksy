@@ -48,16 +48,15 @@ class BookViewModel(application: Application) : AndroidViewModel(application) {
                 Log.d("TAG", "get failed with ", exception)
             }
 
-        accountRepo.getUserProfile()
-            .addSnapshotListener(EventListener<DocumentSnapshot> { value, e ->
-                if (e != null) {
-                    //TODO notify error
-                }
-                val profile = value?.toObject(UserProfile::class.java)
-                profile?.let {
-                    _bookOwned.postValue(it.doesOwnBook(id))
-                }
-            })
+        accountRepo.getUserProfile()?.addSnapshotListener { value, e ->
+            if (e != null) {
+                //TODO notify error
+            }
+            val profile = value?.toObject(UserProfile::class.java)
+            profile?.let {
+                _bookOwned.postValue(it.doesOwnBook(id))
+            }
+        }
     }
 
     private val _bookBuyLoading = MutableLiveData<Boolean>(false)

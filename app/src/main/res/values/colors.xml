@@ -16,8 +16,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="transparent">#00000000</color>
 
-    <color name="primaryTextColor">#EFEFEF</color>
-    <color name="primaryTextColorSecondary">#AAAAAA</color>
+    <color name="colorOnPrimary">#EFEFEF</color>
+    <color name="colorOnPrimaryMuted">#AAAAAA</color>
+
+    <color name="colorOnSecondary">#101010</color>
+    <color name="colorOnSecondaryMuted">#606060</color>
 
     <color name="secondaryTextColor">#FFFFFF</color>
 

@@ -4,16 +4,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import me.shahim.booksy.databinding.FragmentNotificationsBinding
+import com.bumptech.glide.Glide
+import me.shahim.booksy.R
+import me.shahim.booksy.databinding.FragmentAccountBinding
+import me.shahim.booksy.ui.bookshelf.BookListViewModel
 
 class AccountFragment : Fragment() {
 
-    private lateinit var accountViewModel: AccountViewModel
-    private var _binding: FragmentNotificationsBinding? = null
+    private val accountViewModel: AccountViewModel by activityViewModels()
+    private var _binding: FragmentAccountBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -24,11 +27,25 @@ class AccountFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        accountViewModel = ViewModelProvider(this).get(AccountViewModel::class.java)
-
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        _binding = FragmentAccountBinding.inflate(inflater, container, false)
+        binding.viewModel = accountViewModel
         val root: View = binding.root
+
+        init()
         return root
+    }
+
+    private fun init() {
+        accountViewModel.user.value?.let { user ->
+            Glide.with(requireContext())
+                .load(user.photoUrl)
+                .into(binding.accountImage)
+        }
+
+        binding.logoutBtn.setOnClickListener {
+            accountViewModel.logout()
+        }
+
     }
 
     override fun onDestroyView() {

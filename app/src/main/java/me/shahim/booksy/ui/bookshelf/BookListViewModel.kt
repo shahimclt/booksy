@@ -33,7 +33,7 @@ class BookListViewModel(application: Application) : AndroidViewModel(application
     val homeFilter: LiveData<String> = _homeFilter
 
     private val _filteredBooks: MediatorLiveData<List<Book>> by lazy {
-        val med = MediatorLiveData<List <Book>>()
+        val med = MediatorLiveData<List<Book>>()
         med.addSource(_allBooks) { filterBookList() }
         med.addSource(_homeFilter) { filterBookList() }
         med
@@ -43,7 +43,7 @@ class BookListViewModel(application: Application) : AndroidViewModel(application
     private val _ownedBookIds = MutableLiveData<List<String>>(listOf())
 
     private val _ownedBooks: MediatorLiveData<List<Book>> by lazy {
-        val med = MediatorLiveData<List <Book>>()
+        val med = MediatorLiveData<List<Book>>()
         med.addSource(_allBooks) { findOwnedBooks() }
         med.addSource(_ownedBookIds) { findOwnedBooks() }
         getUserBookIds()
@@ -62,23 +62,23 @@ class BookListViewModel(application: Application) : AndroidViewModel(application
         const val AFTERNOON: String = "A"
         const val EVENING: String = "E"
 
-        private val MORNING_END = LocalTime.of(11,55)
-        private val NOON_END = LocalTime.of(15,0)
-        private val NIGHT_END = LocalTime.of(3,55)
+        private val MORNING_END = LocalTime.of(11, 55)
+        private val NOON_END = LocalTime.of(15, 0)
+        private val NIGHT_END = LocalTime.of(3, 55)
     }
 
     private fun filterBookList() {
-        val bookList = _allBooks.value?.toMutableList()?: mutableListOf()
-        val filter = _homeFilter.value?:""
+        val bookList = _allBooks.value?.toMutableList() ?: mutableListOf()
+        val filter = _homeFilter.value ?: ""
 
         _filteredBooks.value = bookList.filter {
-            return@filter FuzzySearch.partialRatio(filter,"${it.title} ${it.author}") > 60
+            return@filter FuzzySearch.partialRatio(filter, "${it.title} ${it.author}") > 60
         }
     }
 
     private fun findOwnedBooks() {
-        val bookList = _allBooks.value?.toMutableList()?: mutableListOf()
-        val ids = _ownedBookIds.value?: listOf()
+        val bookList = _allBooks.value?.toMutableList() ?: mutableListOf()
+        val ids = _ownedBookIds.value ?: listOf()
 
         _ownedBooks.value = bookList.filter {
             return@filter ids.contains(it.id)
@@ -103,29 +103,28 @@ class BookListViewModel(application: Application) : AndroidViewModel(application
     }
 
     private fun getAllBooks() {
-        bookRepo.getBookListRef().addSnapshotListener(EventListener<QuerySnapshot> { value, e ->
+        bookRepo.getBookListRef().addSnapshotListener { value, e ->
             if (e != null) {
                 //TODO notify error
             }
-            val bookList : MutableList<Book> = mutableListOf()
+            val bookList: MutableList<Book> = mutableListOf()
             for (doc in value!!) {
                 val book = doc.toObject(Book::class.java)
                 bookList.add(book)
             }
             _allBooks.postValue(bookList)
-        })
+        }
     }
 
     private fun getUserBookIds() {
-        accountRepo.getUserProfile()
-            .addSnapshotListener(EventListener<DocumentSnapshot> { value, e ->
-                if (e != null) {
-                    //TODO notify error
-                }
-                val profile = value?.toObject(UserProfile::class.java)
-                profile?.let {
-                    _ownedBookIds.postValue(profile.ownedBooks)
-                }
-            })
+        accountRepo.getUserProfile()?.addSnapshotListener { value, e ->
+            if (e != null) {
+                //TODO notify error
+            }
+            val profile = value?.toObject(UserProfile::class.java)
+            profile?.let {
+                _ownedBookIds.postValue(profile.ownedBooks)
+            }
+        }
     }
 }
