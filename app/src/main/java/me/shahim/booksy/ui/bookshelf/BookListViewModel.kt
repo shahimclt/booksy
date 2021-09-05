@@ -14,6 +14,7 @@ import me.shahim.booksy.data.repository.AccountRepository
 import me.shahim.booksy.data.repository.BookRepository
 import me.xdrop.fuzzywuzzy.FuzzySearch
 import java.time.LocalTime
+import kotlin.math.max
 
 class BookListViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -29,13 +30,12 @@ class BookListViewModel(application: Application) : AndroidViewModel(application
     private val _allBooks = MutableLiveData<List<Book>>(listOf())
     val allBooks: LiveData<List<Book>> = _allBooks
 
-    private val _homeFilter = MutableLiveData<String>("")
-    val homeFilter: LiveData<String> = _homeFilter
+    val homeFilter = MutableLiveData<String>("")
 
     private val _filteredBooks: MediatorLiveData<List<Book>> by lazy {
         val med = MediatorLiveData<List<Book>>()
         med.addSource(_allBooks) { filterBookList() }
-        med.addSource(_homeFilter) { filterBookList() }
+        med.addSource(homeFilter) { filterBookList() }
         med
     }
     val filteredBooks: LiveData<List<Book>> = _filteredBooks
@@ -69,10 +69,18 @@ class BookListViewModel(application: Application) : AndroidViewModel(application
 
     private fun filterBookList() {
         val bookList = _allBooks.value?.toMutableList() ?: mutableListOf()
-        val filter = _homeFilter.value ?: ""
+        val filter = homeFilter.value ?: ""
 
-        _filteredBooks.value = bookList.filter {
-            return@filter FuzzySearch.partialRatio(filter, "${it.title} ${it.author}") > 60
+        _filteredBooks.value = when {
+            filter.isEmpty() -> bookList
+            else -> bookList.filter {
+                return@filter max(FuzzySearch.partialRatio(filter, it.title),FuzzySearch.partialRatio(filter, it.author)) > 65
+            }.sortedByDescending {
+                return@sortedByDescending when {
+                    it.title.contains(filter,true) || it.author.contains(filter,true) -> 100
+                    else -> max(FuzzySearch.partialRatio(filter, it.title),FuzzySearch.partialRatio(filter, it.author))
+                }
+            }
         }
     }
 

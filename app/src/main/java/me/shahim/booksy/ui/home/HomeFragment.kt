@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -11,6 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.chad.library.adapter.base.animation.SlideInBottomAnimation
 import me.shahim.booksy.R
 import me.shahim.booksy.data.model.Book
@@ -52,6 +54,13 @@ class HomeFragment : Fragment() {
         initAdapter()
     }
 
+    fun scrollToTopIfSearching() {
+        Toast.makeText(context, "Recycler changed", Toast.LENGTH_SHORT).show()
+        if(binding.homeFilter.hasFocus()) {
+            binding.recyclerView.smoothScrollToPosition(0)
+        }
+    }
+
     private fun observe() {
         bookListViewModel.greeting.observe(viewLifecycleOwner, Observer { greeting ->
             binding.nameGreeting.text = when (greeting) {
@@ -61,8 +70,18 @@ class HomeFragment : Fragment() {
             }
         })
 
-        bookListViewModel.allBooks.observe(viewLifecycleOwner) {
+        mAdapter.registerAdapterDataObserver(object: RecyclerView.AdapterDataObserver() {
+            override fun onChanged() { scrollToTopIfSearching() }
+            override fun onItemRangeRemoved(positionStart: Int, itemCount: Int) { scrollToTopIfSearching() }
+            override fun onItemRangeMoved(fromPosition: Int, toPosition: Int, itemCount: Int) { scrollToTopIfSearching() }
+            override fun onItemRangeInserted(positionStart: Int, itemCount: Int) { scrollToTopIfSearching() }
+            override fun onItemRangeChanged(positionStart: Int, itemCount: Int) { scrollToTopIfSearching() }
+            override fun onItemRangeChanged(positionStart: Int, itemCount: Int, payload: Any?) { scrollToTopIfSearching() }
+        })
+
+        bookListViewModel.filteredBooks.observe(viewLifecycleOwner) {
             mAdapter.setDiffNewData(it.toMutableList())
+
             binding.recyclerView.apply {
                 if (adapter != mAdapter) {
                     adapter = mAdapter
