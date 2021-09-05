@@ -94,9 +94,13 @@ class BookshelfFragment : Fragment() {
                 val book = adapter.getItem(position) as Book
                 val action = BookshelfFragmentDirections.actionNavigationBookshelfToBookDetailFragment(book.id,book.title,book.author,book.coverImage)
                 val coverView = view.findViewById(R.id.book_cover) as View
+                val titleView = view.findViewById(R.id.bookName) as View
                 val extras = FragmentNavigator.Extras.Builder()
                     .addSharedElements(
-                        mapOf(coverView to coverView.transitionName)
+                        mapOf(
+                            coverView to coverView.transitionName
+//                            titleView to titleView.transitionName
+                        )
                     ).build()
                 findNavController().navigate(action,extras)
             }

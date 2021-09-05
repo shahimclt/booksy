@@ -70,6 +70,7 @@
                         android:textAppearance="@style/TextAppearance.Booksy.Headline5"
                         android:textColor="@color/colorOnPrimary"
                         android:maxLines="2"
+                        android:transitionName="@{@string/bookTitleTransition(bookId)}"
                         android:layout_marginHorizontal="@dimen/activity_margin"
                         android:layout_marginBottom="@dimen/line_spacing"
                         app:layout_constraintBottom_toTopOf="@+id/authorName"
@@ -228,6 +229,7 @@
 
                         <Button
                             android:id="@+id/buyBtn"
+                            style="@style/ContainedDayNightButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingHorizontal="@dimen/double_margin"
@@ -278,7 +280,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingHorizontal="@dimen/double_margin"
-                            style="Icon"
+                            style="@style/ContainedDayNightButton.Outlined"
                             android:text="@string/book_detail_read_button"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"

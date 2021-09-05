@@ -15,6 +15,9 @@
         android:layout_width="match_parent"
         tools:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
         android:padding="@dimen/element_spacing"
         >
 
@@ -39,6 +42,7 @@
             android:textAppearance="@style/TextAppearance.Booksy.Body2"
             android:textColor="@color/textColorPrimary"
             android:layout_marginTop="@dimen/element_spacing"
+            android:transitionName="@{@string/bookTitleTransition(book.id)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/book_cover"
