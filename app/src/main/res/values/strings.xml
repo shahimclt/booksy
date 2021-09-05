@@ -16,6 +16,9 @@
 
     <string name="book_list_extra_detail">%d pages, %s</string>
 
+    <string name="bookshelf_eds_title">It is so lonely in here</string>
+    <string name="bookshelf_eds_message">You don\'t have any books in your shelf. Buy some to get started</string>
+    <string name="bookshelf_eds_prompt">Browse all Books</string>
 
     <string name="bookCoverTransition">bookCover:%s</string>
 

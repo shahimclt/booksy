@@ -80,6 +80,10 @@ class BookshelfFragment : Fragment() {
             isAnimationFirstOnly = true
 //            stateRestorationPolicy = RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
 
+            val eds = layoutInflater.inflate(R.layout.bookshelf_eds,binding.recyclerView,false)
+            setEmptyView(eds)
+//            eds.browseBtn.setOnClickListener { captureImage() }
+
             setDiffCallback(BookListQuickAdapter.DiffCallback())
 
             setOnItemClickListener { adapter, view, position ->

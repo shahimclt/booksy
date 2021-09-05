@@ -68,4 +68,7 @@
     <color name="colorChipBackground">#7700bfa5</color>
 
     <color name="poster_overlay">#991c232e</color>
+
+    <color name="colorBunny">#33000000</color>
+    <color name="colorBunnyLight">#22000000</color>
 </resources>

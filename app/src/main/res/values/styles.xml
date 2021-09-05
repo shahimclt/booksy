@@ -105,21 +105,17 @@
         <item name="colorOnPrimary">@color/textColorPrimary</item>
     </style>
 
-    <style name="ContainedButton" parent="Widget.MaterialComponents.Button"></style>
-
-    <style name="ContainedButton.Secondary">
-        <item name="materialThemeOverlay">@style/ThemeOverlay.Secondary</item>
+    <style name="ContainedDayNightButton" parent="Widget.MaterialComponents.Button">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.DayNight</item>
     </style>
 
-    <style name="ContainedOutlineButton" parent="Widget.MaterialComponents.Button.OutlinedButton"></style>
-
-    <style name="ContainedOutlineButton.Secondary">
-        <item name="materialThemeOverlay">@style/ThemeOverlay.Secondary</item>
+    <style name="ContainedDayNightButton.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.DayNight</item>
     </style>
 
-    <style name="ThemeOverlay.Secondary" parent="">
-        <item name="colorPrimary">@color/colorSecondary</item>
-        <item name="colorOnPrimary">@color/colorOnSecondary</item>
+    <style name="ThemeOverlay.DayNight" parent="">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
     </style>
 
 <!--    Rounded ImageView   -->
