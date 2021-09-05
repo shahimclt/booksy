@@ -304,14 +304,29 @@
                         android:layout_marginTop="@dimen/double_margin"
                         android:text="@string/book_detail_genres" />
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="@style/TextAppearance.Booksy.Subtitle2"
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/genreHolder"
+                        android:layout_width="match_parent"
                         android:layout_marginTop="@dimen/activity_margin"
-                        android:lineSpacingExtra="7sp"
-                        android:text="@{viewModel.book.genreString}"
-                        tools:text="Published By Penguin Classics" />
+                        android:layout_height="wrap_content">
+
+                        <androidx.constraintlayout.helper.widget.Flow
+                            android:id="@+id/genreFlow"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:constraint_referenced_ids=""
+                            app:flow_horizontalAlign="start"
+                            app:flow_horizontalBias="0"
+                            app:flow_horizontalGap="@dimen/element_spacing"
+                            app:flow_horizontalStyle="packed"
+                            app:flow_verticalGap="@dimen/element_spacing"
+                            app:flow_wrapMode="chain"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"

@@ -8,7 +8,11 @@ import android.transition.TransitionInflater
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.AppCompatTextView
+import androidx.constraintlayout.helper.widget.Flow
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -79,12 +83,31 @@ class BookDetailFragment : Fragment() {
 
     private fun observe() {
         bookViewModel.book.observe(viewLifecycleOwner, {
-            it?.authorImage?.let { image ->
-                Glide.with(requireContext())
-                    .load(image)
-                    .into(binding.authorImage)
-            }
+            it?.let {  displayBookDetails(it) }
         })
+    }
+
+    private fun displayBookDetails(book: Book) {
+        Glide.with(requireContext())
+            .load(book.authorImage)
+            .into(binding.authorImage)
+
+        val flow = binding.genreFlow
+        val layout = binding.genreHolder
+        flow.referencedIds.forEach {
+            val view = binding.root.findViewById<View>(it)
+            flow.removeView(view)
+            layout.removeView(view)
+        }
+
+        book.genres.forEach { genre ->
+            val genreLayout = LayoutInflater.from(context)
+                .inflate(R.layout.stub_book_genre, layout, false) as AppCompatTextView
+            genreLayout.id = ViewCompat.generateViewId()
+            genreLayout.text = genre
+            layout.addView(genreLayout)
+            flow.addView(genreLayout)
+        }
     }
 
     private fun loadBookHeader() {
