@@ -11,15 +11,15 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.chad.library.adapter.base.animation.SlideInBottomAnimation
 import me.shahim.booksy.R
 import me.shahim.booksy.data.model.Book
 import me.shahim.booksy.databinding.FragmentHomeBinding
+import me.shahim.booksy.ui.bookshelf.BookListViewModel
 
 class HomeFragment : Fragment() {
 
-    private val homeViewModel: HomeViewModel by activityViewModels()
+    private val bookListViewModel: BookListViewModel by activityViewModels()
     private var _binding: FragmentHomeBinding? = null
 
     // This property is only valid between onCreateView and
@@ -34,7 +34,7 @@ class HomeFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        _binding?.viewModel = homeViewModel
+        _binding?.viewModel = bookListViewModel
         val root: View = binding.root
         init()
         observe()
@@ -52,15 +52,15 @@ class HomeFragment : Fragment() {
     }
 
     private fun observe() {
-        homeViewModel.greeting.observe(viewLifecycleOwner, Observer { greeting ->
+        bookListViewModel.greeting.observe(viewLifecycleOwner, Observer { greeting ->
             binding.nameGreeting.text = when (greeting) {
-                HomeViewModel.MORNING -> getString(R.string.home_greeting_morning)
-                HomeViewModel.AFTERNOON -> getString(R.string.home_greeting_noon)
+                BookListViewModel.MORNING -> getString(R.string.home_greeting_morning)
+                BookListViewModel.AFTERNOON -> getString(R.string.home_greeting_noon)
                 else -> getString(R.string.home_greeting_evening)
             }
         })
 
-        homeViewModel.allBooks.observe(viewLifecycleOwner) {
+        bookListViewModel.allBooks.observe(viewLifecycleOwner) {
             mAdapter.setDiffNewData(it.toMutableList())
             binding.recyclerView.apply {
                 if (adapter != mAdapter) {

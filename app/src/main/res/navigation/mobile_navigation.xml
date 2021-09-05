@@ -23,7 +23,7 @@
         android:id="@+id/navigation_bookshelf"
         android:name="me.shahim.booksy.ui.bookshelf.BookshelfFragment"
         android:label="@string/title_bookshelf"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_bookshelf" />
 
     <fragment
         android:id="@+id/navigation_account"

@@ -1,7 +1,6 @@
-package me.shahim.booksy.ui.home
+package me.shahim.booksy.ui.bookshelf
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -12,7 +11,7 @@ import me.shahim.booksy.data.repository.AccountRepository
 import me.shahim.booksy.data.repository.BookRepository
 import java.time.LocalTime
 
-class HomeViewModel(application: Application) : AndroidViewModel(application) {
+class BookListViewModel(application: Application) : AndroidViewModel(application) {
 
     private val bookRepo: BookRepository = BookRepository()
 

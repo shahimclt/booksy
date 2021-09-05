@@ -20,9 +20,14 @@
 
     </style>
 
-    <style name="Widget.Booksy.Toolbar" parent="Widget.MaterialComponents.Toolbar.PrimarySurface">
+    <style name="Widget.Booksy.Toolbar" parent="Widget.MaterialComponents.Toolbar.Surface">
         <item name="titleTextAppearance">@style/TextAppearance.Booksy.ToolbarTitle</item>
-<!--        <item name="materialThemeOverlay">@style/ThemeOverlay.Booksy.Toolbar</item>-->
+    </style>
+
+    <style name="Widget.Booksy.Toolbar.Transparent" parent="Widget.MaterialComponents.Toolbar.Surface">
+        <item name="titleTextAppearance">@style/TextAppearance.Booksy.ToolbarTitle</item>
+        <item name="android:background">@color/colorBackground</item>
+        <!--        <item name="materialThemeOverlay">@style/ThemeOverlay.Booksy.Toolbar</item>-->
     </style>
 
     <style name="TextAppearance.Booksy.ToolbarTitle" parent="TextAppearance.Booksy.Headline6">
