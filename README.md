@@ -20,10 +20,12 @@ Booksy app allows you to browse our curated collection of books. Buy what you li
 * Smooth transitions between pages
 * 
 
-## Some random thoughts
+## Ideas for the future
 
-- This project was coded hastily in Java just before I switched to Kotlin, So Im planning to rewrite this with Kotlin, MVVM, Jetpack, and maybe even Room just because.
-- The activity transitions are still a little glitchy. `//TODO` for later. Hoping Switching to the new Material motion will solve it
+- The app could do with some loading animations while fetching data
+- Migrate the UI to Jetpack compose
+- Sort books by Title, Year .etc
+- Integrate with an ISBN api like Openlibrary or Amazon
 
 ## Usage
 
