@@ -23,11 +23,13 @@
         <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/layout/content_book_detail.xml" value="0.35" />
         <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/layout/fragment_book_detail.xml" value="0.33" />
+        <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/layout/fragment_bookshelf.xml" value="0.28888888888888886" />
         <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/layout/fragment_dashboard.xml" value="0.29212962962962963" />
         <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/layout/fragment_home.xml" value="0.2949074074074074" />
         <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/layout/fragment_login.xml" value="0.328125" />
         <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/layout/fragment_login_loading.xml" value="0.328125" />
         <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/layout/fragment_reader.xml" value="0.29259259259259257" />
+        <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/layout/grid_book_item.xml" value="0.38796296296296295" />
         <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/layout/list_book_item.xml" value="0.4888888888888889" />
         <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/layout/list_books_item.xml" value="0.29444444444444445" />
         <entry key="..\:/myPROJECTS/JOBSEEK/PHE/Booksy/app/src/main/res/menu/bottom_nav_menu.xml" value="0.26157407407407407" />

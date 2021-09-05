@@ -13,21 +13,22 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        tools:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="@dimen/activity_margin"
-        android:paddingVertical="@dimen/element_spacing"
+        android:padding="@dimen/element_spacing"
         >
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/book_cover"
-            android:layout_width="wrap_content"
-            android:layout_height="120dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:elevation="12dp"
             android:scaleType="fitXY"
             android:transitionName="@{@string/bookCoverTransition(book.id)}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:shapeAppearance="@style/ShapeAppearance.App.RoundedImageView"
             app:srcCompat="@drawable/im_book_cover_placeholder" />
 
@@ -35,14 +36,15 @@
             android:id="@+id/bookName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/activity_margin"
-            android:layout_marginEnd="@dimen/element_spacing"
-            android:textAppearance="@style/TextAppearance.Booksy.Headline6"
+            android:textAppearance="@style/TextAppearance.Booksy.Body2"
+            android:textColor="@color/textColorPrimary"
+            android:layout_marginTop="@dimen/element_spacing"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/book_cover"
-            app:layout_constraintTop_toTopOf="@+id/book_cover"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/book_cover"
+            android:textAlignment="center"
             android:text="@{book.title}"
-            android:maxLines="4"
+            android:maxLines="2"
             android:ellipsize="end"
             tools:text="Harry Potter and the Chamber of Secrets" />
 
@@ -53,25 +55,14 @@
             android:ellipsize="end"
             android:fontFamily="@font/roboto_medium"
             android:maxLines="1"
-            android:textAppearance="@style/TextAppearance.Booksy.Subtitle1"
+            android:textAppearance="@style/TextAppearance.Booksy.Overline"
             android:textColor="@color/textColorSecondary"
-            app:layout_constraintEnd_toEndOf="@id/bookName"
-            app:layout_constraintStart_toStartOf="@id/bookName"
-            app:layout_constraintTop_toBottomOf="@+id/bookName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bookName"
+            android:textAlignment="center"
             android:text="@{book.author}"
             tools:text="J K Rowling" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/extraDetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/line_spacing"
-            android:textAppearance="@style/TextAppearance.Booksy.Subtitle2"
-            app:layout_constraintEnd_toEndOf="@id/authorName"
-            app:layout_constraintStart_toStartOf="@id/authorName"
-            app:layout_constraintTop_toBottomOf="@+id/authorName"
-            android:text="@{@string/book_list_extra_detail(book.pages,book.year)}"
-            tools:text="960 pages, 2015" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

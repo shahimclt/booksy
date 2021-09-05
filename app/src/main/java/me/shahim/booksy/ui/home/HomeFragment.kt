@@ -15,6 +15,7 @@ import com.chad.library.adapter.base.animation.SlideInBottomAnimation
 import me.shahim.booksy.R
 import me.shahim.booksy.data.model.Book
 import me.shahim.booksy.databinding.FragmentHomeBinding
+import me.shahim.booksy.databinding.ListBookItemBinding
 import me.shahim.booksy.ui.bookshelf.BookListViewModel
 
 class HomeFragment : Fragment() {
@@ -72,10 +73,7 @@ class HomeFragment : Fragment() {
 
     private fun initAdapter() {
         binding.recyclerView.apply {
-            val manager = LinearLayoutManager(context)
-//            manager.orientation = LinearLayoutManager.VERTICAL
-            layoutManager = manager
-
+            layoutManager = LinearLayoutManager(context)
             setHasFixedSize(false)
         }
 
