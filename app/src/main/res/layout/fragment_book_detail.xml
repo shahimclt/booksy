@@ -124,6 +124,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/element_spacing"
+                    android:gravity="bottom"
                     android:background="@drawable/bg_book_detail_overlap"
                     android:orientation="horizontal">
 
@@ -187,13 +188,17 @@
                         android:gravity="center_horizontal"
                         android:orientation="vertical">
 
-                        <androidx.appcompat.widget.AppCompatTextView
+                        <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                            android:id="@+id/ratingBar"
+                            style="@style/Widget.MaterialRatingBar.RatingBar.Small"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAppearance="@style/TextAppearance.Booksy.Headline6"
-                            android:textAlignment="center"
-                            android:text="@{viewModel.book.language}"
-                            tools:text="English" />
+                            android:layout_marginBottom="@dimen/element_spacing"
+                            tools:rating="3.5"
+                            android:isIndicator="true"
+                            app:layout_constraintBottom_toBottomOf="@+id/extraDetails"
+                            app:layout_constraintEnd_toEndOf="@+id/bookName"
+                            app:layout_constraintTop_toTopOf="@+id/extraDetails" />
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="wrap_content"
@@ -201,7 +206,8 @@
                             android:textAppearance="@style/TextAppearance.Booksy.Caption"
                             android:textAlignment="center"
                             android:textAllCaps="true"
-                            android:text="@string/book_detail_language" />
+                            tools:text="Rating: 3.5"
+                            android:text="@{@string/book_detail_rating(viewModel.book.rating)}" />
 
                     </LinearLayout>
 

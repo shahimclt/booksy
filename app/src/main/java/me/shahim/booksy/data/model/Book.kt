@@ -13,6 +13,7 @@ data class Book(
     val desc: String = "",
     val genres: List<String> = listOf(),
     val year: String = "",
+    val rating: String = "0",
     val pages: Int = 0,
     val language: String = "",
     val publisher: String = "",
@@ -24,5 +25,10 @@ data class Book(
     val genreString: String
         get() {
             return genres.joinToString(", ")
+        }
+
+    val ratingFloat: Float
+        get() {
+            return rating.toFloatOrNull()?:0f
         }
 }

@@ -25,6 +25,7 @@
     <string name="book_detail_pages">Pages</string>
     <string name="book_detail_year">Year</string>
     <string name="book_detail_language">Language</string>
+    <string name="book_detail_rating">Rating: %s</string>
     <string name="book_detail_desc">Description</string>
     <string name="book_detail_genres">Genres</string>
     <string name="book_detail_publisher">Publisher</string>
