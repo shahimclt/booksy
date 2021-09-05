@@ -21,13 +21,14 @@ class AccountRepository () {
                         "email" to user.email,
                         "photo" to user.photoUrl.toString(),
                         "ownedBooks" to arrayListOf<String>(),
-                    ), SetOptions.merge()
+                    ), SetOptions.mergeFields("name","email","photo")
                 )
         }
     }
 
-    fun getUserProfile(): DocumentReference {
-        return db.collection("users").document(getUserID()?:"")
+    fun getUserProfile(): DocumentReference? {
+        val userId = getUserID()?:return null
+        return db.collection("users").document(userId)
     }
 
     fun getUserID(): String? {
