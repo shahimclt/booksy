@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -79,6 +80,13 @@ class BookshelfFragment : Fragment() {
             adapterAnimation = SlideInBottomAnimation()
             isAnimationFirstOnly = true
 //            stateRestorationPolicy = RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
+
+            val eds = layoutInflater.inflate(R.layout.bookshelf_eds,binding.recyclerView,false)
+            setEmptyView(eds)
+            eds.findViewById<Button>(R.id.browseBtn).setOnClickListener {
+                val action = BookshelfFragmentDirections.actionNavigationBookshelfToNavigationHome()
+                findNavController().navigate(action)
+            }
 
             setDiffCallback(BookListQuickAdapter.DiffCallback())
 

@@ -10,4 +10,8 @@
 
     <color name="colorBackground">#1d212b</color>
     <color name="colorSurface">#292d36</color>
+
+
+    <color name="colorBunny">#efefef</color>
+    <color name="colorBunnyLight">#fff</color>
 </resources>

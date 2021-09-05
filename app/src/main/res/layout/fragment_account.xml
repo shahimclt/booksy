@@ -116,7 +116,7 @@
 
                         <Button
                             android:id="@+id/logoutBtn"
-                            style="@style/ContainedButton.Secondary"
+                            style="@style/ContainedDayNightButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/activity_margin"
