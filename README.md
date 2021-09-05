@@ -16,6 +16,9 @@ Booksy app allows you to browse our curated collection of books. Buy what you li
 
 Feel free to clone the project and build it yourself. Or if you're feeling lazy, grab the latest apk from [releases](https://github.com/shahimclt/booksy/releases) and get going.
 
+PS: The app looks better if you turn ON dark mode. 
+
+
 ## Features
 
 * Login using your google account (more services coming soon)
