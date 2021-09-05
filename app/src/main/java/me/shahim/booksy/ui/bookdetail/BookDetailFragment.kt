@@ -92,6 +92,8 @@ class BookDetailFragment : Fragment() {
             .load(book.authorImage)
             .into(binding.authorImage)
 
+        binding.ratingBar.rating = book.ratingFloat
+
         val flow = binding.genreFlow
         val layout = binding.genreHolder
         flow.referencedIds.forEach {

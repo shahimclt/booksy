@@ -66,12 +66,23 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/line_spacing"
+            android:text="@{@string/book_list_extra_detail(book.pages,book.year)}"
             android:textAppearance="@style/TextAppearance.Booksy.Subtitle2"
-            app:layout_constraintEnd_toEndOf="@id/authorName"
+            app:layout_constraintEnd_toStartOf="@+id/ratingBar"
             app:layout_constraintStart_toStartOf="@id/authorName"
             app:layout_constraintTop_toBottomOf="@+id/authorName"
-            android:text="@{@string/book_list_extra_detail(book.pages,book.year)}"
             tools:text="960 pages, 2015" />
+
+        <me.zhanghai.android.materialratingbar.MaterialRatingBar
+            android:id="@+id/ratingBar"
+            style="@style/Widget.MaterialRatingBar.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:rating="3.5"
+            android:isIndicator="true"
+            app:layout_constraintBottom_toBottomOf="@+id/extraDetails"
+            app:layout_constraintEnd_toEndOf="@+id/bookName"
+            app:layout_constraintTop_toTopOf="@+id/extraDetails" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

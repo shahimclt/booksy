@@ -7,6 +7,7 @@ import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import me.shahim.booksy.R
 import me.shahim.booksy.data.model.Book
 import me.shahim.booksy.databinding.ListBookItemBinding
+import me.zhanghai.android.materialratingbar.MaterialRatingBar
 
 class BookListQuickAdapter( data: MutableList<Book>?): BaseQuickAdapter<Book, BaseDataBindingHolder<ListBookItemBinding>>(
     R.layout.list_book_item,data) {
@@ -21,6 +22,7 @@ class BookListQuickAdapter( data: MutableList<Book>?): BaseQuickAdapter<Book, Ba
             .placeholder(R.drawable.im_book_cover_placeholder)
             .error(R.drawable.im_book_cover_placeholder)
             .into(holder.getView(R.id.book_cover))
+        holder.getView<MaterialRatingBar>(R.id.ratingBar).rating = item.ratingFloat
     }
 
     class DiffCallback: DiffUtil.ItemCallback<Book>() {
