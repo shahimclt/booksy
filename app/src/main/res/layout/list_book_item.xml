@@ -37,6 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/activity_margin"
             android:layout_marginEnd="@dimen/element_spacing"
+            android:transitionName="@{@string/bookTitleTransition(book.id)}"
             android:textAppearance="@style/TextAppearance.Booksy.Headline6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/book_cover"

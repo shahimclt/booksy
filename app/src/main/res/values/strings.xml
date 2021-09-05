@@ -22,6 +22,7 @@
     <string name="bookshelf_eds_prompt">Browse all Books</string>
 
     <string name="bookCoverTransition">bookCover:%s</string>
+    <string name="bookTitleTransition">bookTitle:%s</string>
 
     <string name="book_detail_pages">Pages</string>
     <string name="book_detail_year">Year</string>
